@@ -1,10 +1,12 @@
 # Daniel Navarro
 
-> Daniel Navarro (Daniel Navarro Madriñán) is a Geneva-based Data Scientist, AI Engineer and Data Engineer. He builds RAG and LLM systems, knowledge graphs, data pipelines and BI, and brings quantitative policy analysis (impact evaluation) and an anthropology background in human behaviour. Open to data and AI roles in Geneva, Lausanne/Vaud, Zurich, Vienna and remote.
+> Daniel Navarro (Daniel Navarro Madriñán) is a Geneva-based Data Scientist, AI Engineer and Data Engineer. He builds RAG and LLM systems, knowledge graphs, data pipelines and BI, and brings quantitative policy analysis (impact evaluation) and an anthropology background in human behaviour. Open to data and AI roles in Geneva, Lausanne/Vaud, Zurich, Vienna and remote; can work in Austria without visa sponsorship.
 
 ## Profile
 - [Home (EN)](https://daniel-navarro-m.github.io/): summary, selected work, experience, skills
 - [Accueil (FR)](https://daniel-navarro-m.github.io/fr/): version française
+- [Startseite (DE)](https://daniel-navarro-m.github.io/de/): deutsche Version
+- [CV (PDF)](https://daniel-navarro-m.github.io/cv/Daniel_Navarro_CV.pdf)
 - [CV](https://daniel-navarro-m.github.io/cv/): full curriculum vitae
 
 ## Current roles
