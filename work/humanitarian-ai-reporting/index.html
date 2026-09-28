@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grounded AI Reporting for Humanitarian Crises | Daniel Navarro</title>
+<meta name="description" content="Case study: a graph-grounded AI report-generation system for humanitarian information management, built with NLP, vector and graph databases, Docker and Azure in Geneva.">
+<link rel="canonical" href="https://daniel-navarro-m.github.io/work/humanitarian-ai-reporting/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grounded AI Reporting for Humanitarian Crises">
+<meta property="og:description" content="A graph-grounded AI report generator for humanitarian information management. Case study by Daniel Navarro, Geneva.">
+<meta property="og:url" content="https://daniel-navarro-m.github.io/work/humanitarian-ai-reporting/">
+<meta property="og:image" content="https://daniel-navarro-m.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"Grounded AI reporting for humanitarian crises",
+ "about":["Retrieval-Augmented Generation","Knowledge Graphs","Humanitarian Information Management"],
+ "author":{"@type":"Person","@id":"https://daniel-navarro-m.github.io/#person","name":"Daniel Navarro","url":"https://daniel-navarro-m.github.io/"},
+ "datePublished":"2026-09-28","inLanguage":"en","image":"https://daniel-navarro-m.github.io/assets/img/og.png",
+ "mainEntityOfPage":"https://daniel-navarro-m.github.io/work/humanitarian-ai-reporting/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · Humanitarian AI · 2026</p>
+  <h1>Grounded AI reporting for humanitarian crises</h1>
+  <p class="lede">When a crisis hits, information managers have hours, not days, to turn scattered news and data into a report decision-makers can trust. I built a system that drafts those reports from a traceable graph of facts, instead of a chatbot that improvises.</p>
+
+  <dl class="facts">
+    <div><dt>Context</dt><dd>UN OCHA, Geneva</dd></div>
+    <div><dt>Role</dt><dd>Information Management, design &amp; build</dd></div>
+    <div><dt>Stack</dt><dd>Python · NLP · graph &amp; vector DBs · Docker · Azure</dd></div>
+  </dl>
+
+  <h2>The problem</h2>
+  <p>Situation reports follow standard formats, but the facts behind them arrive from many sources at once: news, APIs and field updates. A general-purpose chatbot can write fluent text, but it cannot show where each statement comes from, and in humanitarian reporting an untraceable claim is a liability.</p>
+
+  <h2>What I built</h2>
+  <p>An automated report-generation pipeline. The user picks a standard template and provides inputs; the system does the rest:</p>
+  <div class="diagram" role="img" aria-label="Pipeline: sources flow into entity and relation extraction, then into a fact and relationship graph with a vector index, which feeds template-driven report generation.">
+    <svg viewBox="0 0 760 170" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor" style="color:var(--muted)"/></marker></defs>
+      <rect class="box" x="4" y="50" width="140" height="70" rx="10"/><text x="74" y="80" text-anchor="middle">News &amp; API</text><text x="74" y="98" text-anchor="middle">sources</text>
+      <rect class="box" x="196" y="50" width="150" height="70" rx="10"/><text x="271" y="80" text-anchor="middle">NLP extraction</text><text x="271" y="98" text-anchor="middle">events · people · orgs</text>
+      <rect class="hl" x="398" y="30" width="160" height="110" rx="10"/><text x="478" y="72" text-anchor="middle">Fact &amp; relationship</text><text x="478" y="90" text-anchor="middle">graph</text><text x="478" y="112" text-anchor="middle">+ vector index</text>
+      <rect class="box" x="610" y="50" width="146" height="70" rx="10"/><text x="683" y="80" text-anchor="middle">Template-driven</text><text x="683" y="98" text-anchor="middle">grounded report</text>
+      <path class="arrow" d="M146 85H192"/><path class="arrow" d="M348 85H394"/><path class="arrow" d="M560 85H606"/>
+      <text x="683" y="150" text-anchor="middle" style="fill:var(--muted)">template + user inputs</text>
+    </svg>
+    <small>Simplified architecture. Internal details and data are not shown.</small>
+  </div>
+  <ul class="list">
+    <li><b>Ingestion.</b> Pulls news and API data relevant to the crisis and the report type.</li>
+    <li><b>Graph of facts.</b> NLP and embeddings extract events, people and organisations and store the relationships between them in graph and vector databases, so every sentence in the output can be traced back.</li>
+    <li><b>Generation.</b> Retrieval-augmented generation fills the chosen template from the graph rather than from the model's memory.</li>
+    <li><b>Delivery.</b> A user interface containerised with Docker for deployment and scaling on Azure.</li>
+  </ul>
+
+  <h2>In practice</h2>
+  <p>The system supported reporting during the 2026 Venezuela earthquake response, where I added new sources to the retrieval layer and built new report formats under tight deadlines. I also supported needs analysis and mapped populated areas to surface overlooked communities. I then trained country offices on using RAG and LLMs for reporting and on setting up the system themselves.</p>
+
+  <p class="callout">What I took from it: in high-stakes settings, <b>traceability beats fluency</b>. Designing around a graph of verifiable facts made the output something analysts could check, correct and sign off.</p>
+
+  <p style="font-size:.85rem;color:var(--muted)">This page describes my own contribution at a high level. It does not represent the official views of the United Nations, and no internal data, code or documents are shared.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/procurement-intelligence/">Next: Procurement intelligence platform →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

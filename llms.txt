@@ -1,0 +1,31 @@
+# Daniel Navarro
+
+> Daniel Navarro (Daniel Navarro Madriñán) is a Geneva-based Data Scientist, AI Engineer and Data Engineer. He builds RAG and LLM systems, knowledge graphs, data pipelines and BI, and brings quantitative policy analysis (impact evaluation) and an anthropology background in human behaviour. Open to data and AI roles in Geneva, Lausanne/Vaud, Zurich, Vienna and remote.
+
+## Profile
+- [Home (EN)](https://daniel-navarro-m.github.io/): summary, selected work, experience, skills
+- [Accueil (FR)](https://daniel-navarro-m.github.io/fr/): version française
+- [CV](https://daniel-navarro-m.github.io/cv/): full curriculum vitae
+
+## Current roles
+- Data Engineer & BI Consultant, Instrumental Partners LLC (Jul 2025 to present, remote from Geneva): RAG and graph knowledge base, scraping and ETL over 1M+ procurement contracts, BI dashboards, pricing ML
+- Information Management Intern, UN OCHA Geneva (Jun 2026 to present): graph-grounded AI report generation for humanitarian crises, Docker/Azure
+
+## Case studies
+- [Grounded AI reporting for humanitarian crises](https://daniel-navarro-m.github.io/work/humanitarian-ai-reporting/)
+- [Procurement intelligence with RAG and ML](https://daniel-navarro-m.github.io/work/procurement-intelligence/)
+
+## Code
+- [Paz Total impact evaluation (R, TWFE, event study)](https://github.com/Daniel-Navarro-M/-I-m-Paz-Total_replication)
+- [Rail Baltica corruption-risk analytics (R)](https://github.com/Daniel-Navarro-M/rail_baltika_corruption_replication)
+- [Migration discourse NLP, Dominican Republic](https://github.com/Daniel-Navarro-M/dialectical_identity_in_RD)
+- [Blackpolis policy brief, Cali](https://github.com/Daniel-Navarro-M/blackpolis_replication)
+
+## Education
+- MA in Public Policy, Quantitative Policy Analysis, Central European University (2026)
+- BA in Anthropology, Magna Cum Laude, first in class, Universidad Icesi (2024)
+
+## Contact
+- Email: danielnavarromadrinan@gmail.com
+- LinkedIn: https://www.linkedin.com/in/daniel-navarro-madrinan/
+- GitHub: https://github.com/Daniel-Navarro-M

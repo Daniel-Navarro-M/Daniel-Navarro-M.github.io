@@ -1,2 +1,23 @@
 # Daniel-Navarro-M.github.io
-Personal Github Page with working samples, CV and contact for for the best AI and Data engineer specialized in Quantitative Policy, Social and Behavioural sciences.
+
+Personal site of **Daniel Navarro**, Data Scientist & AI Engineer in Geneva: CV, work samples and contact.
+Live at https://daniel-navarro-m.github.io/
+
+Static HTML/CSS/JS, no build step. GitHub Pages serves the `main` branch root.
+
+## Structure
+- `index.html` (EN) and `fr/index.html` (FR), linked with hreflang
+- `cv/` printable web CV (Save as PDF from the browser)
+- `work/<slug>/` case studies, one URL each for long-tail search
+- `assets/` CSS, JS (hero knowledge-graph canvas, theme toggle, filters), images
+- `sitemap.xml`, `robots.txt`, `llms.txt`, `404.html`
+
+## After publishing (SEO checklist)
+1. Settings > Pages: source `main` / root.
+2. Google Search Console: add the URL-prefix property, verify with the HTML meta tag (add it to `<head>` of `index.html`), submit `sitemap.xml`, request indexing for `/` and `/fr/`.
+3. Bing Webmaster Tools: import from Search Console.
+4. Add the site URL to LinkedIn (Contact info + Featured), GitHub profile, email signature, ORCID. These backlinks drive name-search ranking.
+5. Validate structured data: https://search.google.com/test/rich-results
+6. Optional: custom domain (e.g. `danielnavarro.ch`), then update canonical, hreflang, og:url and sitemap URLs.
+
+When updating content, bump `dateModified` in the JSON-LD and `lastmod` in `sitemap.xml`.
