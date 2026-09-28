@@ -1,17 +1,17 @@
 :root{
   --bg:#f5f3ee;--bg-2:#ece9e1;--surface:#fffdf8;--ink:#15171b;--ink-2:#3d424b;--muted:#6b7079;
-  --line:rgba(21,23,27,.12);--accent:#d9480f;--accent-2:#0b6e69;--accent-soft:rgba(217,72,15,.1);
+  --line:rgba(21,23,27,.12);--accent:#1d4ed8;--accent-2:#0b6e69;--accent-soft:rgba(29,78,216,.1);--accent-inv:#6ea8ff;
   --radius:18px;--max:1180px;--shadow:0 1px 2px rgba(0,0,0,.04),0 12px 32px -12px rgba(0,0,0,.12);
   --serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0f1114;--bg-2:#15181c;--surface:#171a1f;--ink:#eceae4;--ink-2:#c3c6cc;--muted:#8c919a;
-  --line:rgba(236,234,228,.11);--accent:#ff7a45;--accent-2:#3fc1b5;--accent-soft:rgba(255,122,69,.12);
+  --line:rgba(236,234,228,.11);--accent:#6ea8ff;--accent-2:#3fc1b5;--accent-soft:rgba(110,168,255,.14);--accent-inv:#1d4ed8;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -12px rgba(0,0,0,.6);color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0f1114;--bg-2:#15181c;--surface:#171a1f;--ink:#eceae4;--ink-2:#c3c6cc;--muted:#8c919a;
-  --line:rgba(236,234,228,.11);--accent:#ff7a45;--accent-2:#3fc1b5;--accent-soft:rgba(255,122,69,.12);
+  --line:rgba(236,234,228,.11);--accent:#6ea8ff;--accent-2:#3fc1b5;--accent-soft:rgba(110,168,255,.14);--accent-inv:#1d4ed8;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -12px rgba(0,0,0,.6);color-scheme:dark}
 
 *,*::before,*::after{box-sizing:border-box}
@@ -60,7 +60,7 @@ p{margin:0 0 1em}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:10px;font:600 .95rem/1 var(--sans);padding:15px 22px;border-radius:999px;text-decoration:none;border:1px solid var(--ink);transition:transform .2s,background .2s,color .2s}
 .btn.primary{background:var(--ink);color:var(--bg)}
-.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-1px)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--bg);transform:translateY(-1px)}
 .btn.ghost:hover{background:var(--ink);color:var(--bg)}
 .btn svg{width:16px;height:16px}
 .hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:44px;font:500 .8rem/1.4 var(--mono);color:var(--muted)}
@@ -158,11 +158,11 @@ section{padding:112px 0}
 .contact{background:var(--ink);color:var(--bg);border-radius:28px;margin:0 24px 24px;padding:96px 0}
 .contact .eyebrow{color:color-mix(in srgb,var(--bg) 60%,transparent)}
 .contact h2{font-size:clamp(2.6rem,7vw,5.4rem);max-width:14ch}
-.contact h2 em{color:var(--accent)}
+.contact h2 em{color:var(--accent-inv)}
 .contact p{color:color-mix(in srgb,var(--bg) 75%,transparent);max-width:40rem;margin:24px 0 36px}
 .contact .btn{border-color:var(--bg);color:var(--bg)}
 .contact .btn.primary{background:var(--bg);color:var(--ink)}
-.contact .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.contact .btn.primary:hover{background:var(--accent-inv);border-color:var(--accent-inv);color:var(--ink)}
 .contact .btn.ghost:hover{background:var(--bg);color:var(--ink)}
 .contact .where{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
 .contact .where span{font:500 .76rem/1 var(--mono);padding:8px 12px;border:1px solid color-mix(in srgb,var(--bg) 25%,transparent);border-radius:999px;color:color-mix(in srgb,var(--bg) 80%,transparent)}
@@ -201,3 +201,4 @@ footer a{color:var(--muted)}
 .callout{border-left:3px solid var(--accent);background:var(--surface);padding:16px 20px;border-radius:0 12px 12px 0;margin:28px 0;font-size:.95rem}
 .back{font:500 .8rem/1 var(--mono);text-decoration:none;color:var(--muted);display:inline-block;margin-bottom:36px}
 .next{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.contact .eyebrow::before{background:var(--accent-inv)}

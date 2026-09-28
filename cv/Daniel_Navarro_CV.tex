@@ -1,0 +1,117 @@
+%% Public CV - Daniel Navarro (house style: black serif, bold for emphasis)
+%% Compile with: lualatex Daniel_Navarro_CV.tex   -> Daniel_Navarro_CV.pdf (served at /cv/Daniel_Navarro_CV.pdf)
+%% Public version: no phone number or street address.
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\usepackage[left=1.6cm,right=1.6cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Daniel Navarro - CV - Data Scientist and AI Engineer, Geneva},pdfauthor={Daniel Navarro Madriñán},
+  pdfkeywords={Data Scientist, AI Engineer, Data Engineer, RAG, LLM, Python, SQL, Machine Learning, Impact Evaluation, Geneva}}
+
+\setlist[itemize]{leftmargin=1.3em, itemsep=1pt, topsep=1pt, parsep=0pt}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\newcommand{\cvsection}[1]{\vspace{5pt}{\centering\textbf{\large \MakeUppercase{#1}}\par}\vspace{2pt}\hrule\vspace{4pt}}
+\newcommand{\cventryhead}[4]{\needspace{4\baselineskip}\textbf{#1}\hfill\textbf{#2}\\\textit{#3}\hfill\textit{#4}\par\vspace{1pt}}
+
+\begin{document}
+
+{\centering
+{\LARGE\bfseries Daniel Navarro}\\[3pt]
+{Data Scientist \& AI Engineer \textbar{} RAG/LLM Systems, Data Engineering \& BI \textbar{} MA Public Policy (CEU)}\\[3pt]
+{\small danielnavarromadrinan@gmail.com \textbar{} \href{https://www.linkedin.com/in/daniel-navarro-madrinan/}{linkedin.com/in/daniel-navarro-madrinan} \textbar{} \href{https://github.com/Daniel-Navarro-M}{github.com/Daniel-Navarro-M}}\\[1pt]
+{\small \href{https://daniel-navarro-m.github.io/}{daniel-navarro-m.github.io} \textbar{} Geneva, Switzerland (open to relocation)}\par}
+\vspace{4pt}
+
+I build data and AI systems end to end, from scraping and ETL to \textbf{RAG pipelines}, models and the dashboards people decide with. I combine applied \textbf{machine learning} (tree-based, time series, clustering) and modern \textbf{AI} (RAG, vector and graph databases, local LLMs) with production-minded pipelines in \textbf{Python, SQL, Docker and AWS/Azure}, for private-sector clients and for the UN in Geneva. My training in anthropology and quantitative policy analysis means I build for the people who use the output, and explain it clearly to technical and non-technical audiences.
+
+\cvsection{Core Competencies}
+\textbf{Applied AI \& RAG:} RAG pipelines, vector and graph databases, embeddings, knowledge graphs, semantic search, LLMs (Hugging Face, local models via Docker Model Runner), NLP, automated report generation; agentic coding with \textbf{Claude Code}.
+
+\smallskip
+\textbf{Machine Learning \& Statistics:} Python (pandas, scikit-learn), R; supervised and unsupervised ML (tree-based, regression, clustering), time series (ARIMA, XGBoost, NARX), deep learning, topic models and transformer sentiment.
+
+\smallskip
+\textbf{Data Engineering \& Cloud:} ETL pipelines, web scraping, REST APIs, n8n automation, data architecture (ERDs, schemas, user flows); SQL (PostgreSQL, SQLite), Docker, AWS, Azure, Git.
+
+\smallskip
+\textbf{BI \& Visualisation:} Power BI, Preset, Dash, Plotly, custom CRMs, KPI reporting and data storytelling; QGIS, GeoJSON, Copernicus/Sentinel satellite data.
+
+\smallskip
+\textbf{Quantitative Policy \& Research:} impact evaluation and causal inference (TWFE, event studies), survey-weighted regression, procurement and corruption-risk analytics, MEAL.
+
+\cvsection{Professional Experience}
+\cventryhead{Instrumental Partners LLC}{Geneva (remote)}{Data Engineer \& BI Consultant}{Jul 2025--Present}
+\begin{itemize}
+\item Built an \textbf{AI RAG and graph knowledge base} with automated competitor and market-intelligence reporting over \textbf{1M+ federal procurement contracts} and 8k+ competitors, using proprietary RAG pipelines and local LLMs.
+\item Engineered Python web-scraping, API and \textbf{ETL pipelines} structuring procurement data (FPDS, DIBBS), and designed the data architecture from ERDs and schemas to user flows.
+\item Applied ML and statistical models for \textbf{pricing and bidding recommendations} in a custom CRM, with Apollo API enrichment for prospecting workflows.
+\item Built the \textbf{BI dashboards} clients run on (Preset, Power BI, SQLite), and shipped the firm's website end to end (content, case studies, SEO) with n8n content and news-monitoring automation.
+\end{itemize}
+
+\cventryhead{UN OCHA}{Geneva, Switzerland}{Information Management Intern}{Jun 2026--Present}
+\begin{itemize}
+\item Built an \textbf{automated AI report-generation system} (not a chatbot): it monitors news, social and API sources and builds a fact and relationship graph of events, people and organisations (NLP, graph and vector databases, embeddings), so every statement is traceable to a named source.
+\item Containerised the UI with \textbf{Docker} for deployment on \textbf{Azure}; trained country offices to use and extend the system and wrote the accompanying guides.
+\item Contributed to Flash Appeal and Situation Analysis products and needs analysis for the \textbf{Venezuela 2026 earthquake}, mapping populated areas to surface overlooked populations under daily deadlines.
+\end{itemize}
+
+\cventryhead{World Bank / CEU}{Vienna, Austria}{Researcher \& Workstream Lead -- Educational Inequality (TIMSS)}{Sep 2025--May 2026}
+\begin{itemize}
+\item Led the CEU team on a multi-country World Bank project (task allocation and milestones in Microsoft Planner) and was the interface with World Bank counterparts on deliverables.
+\item Cleaned and merged large-scale TIMSS data; ran \textbf{survey-weighted regression} and comparative regional analysis of socio-economic gaps with a reproducible methodology.
+\end{itemize}
+
+\cventryhead{Independent}{Bogot\'a, Colombia}{Independent Consultant -- Data Science \& GIS}{Jul 2024--Jul 2025}
+\begin{itemize}
+\item Built ETL pipelines and \textbf{time-series models} (ARIMA, XGBoost, NARX) for air-quality and climate forecasting on Copernicus/Sentinel data; deployed dashboards in Dash, Plotly and Power BI.
+\item Created GeoJSON datasets for FM-radio coverage, environmental monitoring and infrastructure planning.
+\end{itemize}
+
+\cventryhead{EU Delegation in Colombia}{Bogot\'a, Colombia}{Administrative Assistant / Archivist}{May 2024--Oct 2024}
+\begin{itemize}
+\item Designed and executed a five-month plan over 20 years of EU cooperation records (about 8 tons, 9,300 files); built Excel tracking that forecast progress with \textbf{$\sim$90\% accuracy} and met 100\% of the target.
+\end{itemize}
+
+\cventryhead{Organization of American States (OAS)}{Santo Domingo \& El Salvador}{National Office Intern (Research) \& International Electoral Observer}{Jun 2023--Feb 2024}
+\begin{itemize}
+\item Analysed migration discourse by scraping presidential speeches and social-media data with \textbf{Python NLP}; drafted analytical reports and ran a digital strategy that lifted engagement by \textbf{500\%+}.
+\item Observed the 2024 Salvadoran elections (DECO mission), documenting practices with a legal and gender focus.
+\end{itemize}
+
+\cventryhead{I2T Laboratory \& SegLab, Universidad ICESI}{Cali, Colombia}{Research Assistant / Data Analyst}{Feb 2021--Jul 2024}
+\begin{itemize}
+\item Applied ML and deep learning to geospatial health data linking environmental exposure to Parkinson's disease progression, a \textbf{25\% improvement over baseline}; presented to doctors, engineers and designers.
+\item Security and peacebuilding research with QGIS and Power BI dashboards feeding policy papers and articles.
+\end{itemize}
+
+\cvsection{Education}
+\cventryhead{Central European University (CEU)}{Vienna, Austria}{MA in Public Policy -- Quantitative Policy Analysis}{Sep 2025--Jun 2026}
+Thesis: \textit{(I'm)Paz Total: Quantitative Evaluation of the Política de Paz Total in Colombia}. Coursework: \textbf{Text Analysis \& NLP}, Impact Evaluation (R), Public Procurement Analytics, Data Visualization.
+
+\smallskip
+\cventryhead{Universidad ICESI}{Cali, Colombia}{BA in Anthropology (\emph{Antrop\'ologo}), Magna Cum Laude}{Feb 2019--Feb 2024}
+GPA 4.5/5.0, ranked 1st in class, Dean's List. Erasmus exchange, University of Turin (2022).
+
+\cvsection{Selected Projects (github.com/Daniel-Navarro-M)}
+\begin{itemize}
+\item \textbf{Paz Total impact evaluation:} monthly panel from National Police and ACLED data for three conflict regions; two-way fixed effects and event studies in R.
+\item \textbf{Rail Baltica corruption-risk analytics:} contract-level Corruption Risk Index from red-flag indicators validated by logistic regression on EU tender data (with P. Biša).
+\item \textbf{Migration discourse NLP:} seeded LDA, DBSCAN and transformer sentiment on 43 presidential speeches and $\sim$8,800 Reddit sentences.
+\end{itemize}
+
+\cvsection{Publications, Awards \& Languages}
+\textbf{Publication:} Milanese \& Navarro (2025). \textit{Beyond municipal boundaries: metropolitanization of electoral behavior in Cali using k-means clustering.} Revista Geographia (Brazil).
+
+\smallskip
+\textbf{Awards \& Certifications:} \textbf{1st Place}, 2nd TechPol\'itica hackathon, FLACSO Ecuador \textbullet{} MEAL (Monitoring, Evaluation, Accountability \& Learning) \textbullet{} Satellite Image Processing \textbullet{} Effective Project Planning \& Evaluation in Health Research.
+
+\smallskip
+\textbf{Languages:} Spanish (native) \textbullet{} English (C1, IELTS Academic 8.0) \textbullet{} Italian (B1) \textbullet{} French (A2) \textbullet{} German (beginner).
+
+\end{document}
