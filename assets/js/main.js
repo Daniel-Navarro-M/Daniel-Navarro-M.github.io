@@ -55,7 +55,7 @@ if (cv) {
       const a = nodes[i], b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
       if (d < 130) { ctx.globalAlpha = (1 - d / 130) * .35; ctx.strokeStyle = (a.label || b.label) ? acc2 : ink; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
     }
-    ctx.font = '500 11px "JetBrains Mono", monospace';
+    ctx.font = '500 11px "IBM Plex Mono", monospace';
     for (const p of nodes) {
       const near = Math.hypot(mouse.x - p.x, mouse.y - p.y) < 160;
       ctx.globalAlpha = p.label ? .95 : .45; ctx.fillStyle = p.label || near ? acc : ink;
