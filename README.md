@@ -1,7 +1,7 @@
 # Daniel-Navarro-M.github.io
 
 Personal site of **Daniel Navarro**, Data Scientist & AI Engineer in Geneva: CV, work samples and contact.
-Live at https://daniel-navarro-m.github.io/
+Live at https://danielnavarro.work/
 
 Static HTML/CSS/JS, no build step. GitHub Pages serves the `main` branch root.
 
@@ -18,8 +18,5 @@ Static HTML/CSS/JS, no build step. GitHub Pages serves the `main` branch root.
 3. Bing Webmaster Tools: import from Search Console.
 4. Add the site URL to LinkedIn (Contact info + Featured), GitHub profile, email signature, ORCID. These backlinks drive name-search ranking.
 5. Validate structured data: https://search.google.com/test/rich-results
-6. Optional custom domain: buy it, add a `CNAME` file containing the domain, point DNS to GitHub Pages, then replace every `https://daniel-navarro-m.github.io` with the new domain:
-   `grep -rl 'daniel-navarro-m.github.io' --include='*.html' --include='*.xml' --include='*.txt' --include='*.tex' . | xargs sed -i 's#https://daniel-navarro-m.github.io#https://NEWDOMAIN#g'`
-   Keep the github.io address working (GitHub redirects it automatically) and add the new domain as a property in Search Console.
 
 When updating content, bump `dateModified` in the JSON-LD and `lastmod` in `sitemap.xml`.

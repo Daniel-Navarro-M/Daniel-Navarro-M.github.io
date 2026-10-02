@@ -3,19 +3,19 @@
 > Daniel Navarro (Daniel Navarro Madriñán) is a Geneva-based Data Scientist, AI Engineer and Data Engineer. He builds RAG and LLM systems, knowledge graphs, data pipelines and BI, and brings quantitative policy analysis (impact evaluation) and an anthropology background in human behaviour. Open to data and AI roles in Geneva, Lausanne/Vaud, Zurich, Vienna and remote; can work in Austria without visa sponsorship.
 
 ## Profile
-- [Home (EN)](https://daniel-navarro-m.github.io/): summary, selected work, experience, skills
-- [Accueil (FR)](https://daniel-navarro-m.github.io/fr/): version française
-- [Startseite (DE)](https://daniel-navarro-m.github.io/de/): deutsche Version
-- [CV (PDF)](https://daniel-navarro-m.github.io/cv/Daniel_Navarro_CV.pdf)
-- [CV](https://daniel-navarro-m.github.io/cv/): full curriculum vitae
+- [Home (EN)](https://danielnavarro.work/): summary, selected work, experience, skills
+- [Accueil (FR)](https://danielnavarro.work/fr/): version française
+- [Startseite (DE)](https://danielnavarro.work/de/): deutsche Version
+- [CV (PDF)](https://danielnavarro.work/cv/Daniel_Navarro_CV.pdf)
+- [CV](https://danielnavarro.work/cv/): full curriculum vitae
 
 ## Current roles
 - Data Engineer & BI Consultant, Instrumental Partners LLC (Jul 2025 to present, remote from Geneva): RAG and graph knowledge base, scraping and ETL over 1M+ procurement contracts, BI dashboards, pricing ML
 - Information Management Intern, UN OCHA Geneva (Jun 2026 to present): graph-grounded AI report generation for humanitarian crises, Docker/Azure
 
 ## Case studies
-- [Grounded AI reporting for humanitarian crises](https://daniel-navarro-m.github.io/work/humanitarian-ai-reporting/)
-- [Procurement intelligence with RAG and ML](https://daniel-navarro-m.github.io/work/procurement-intelligence/)
+- [Grounded AI reporting for humanitarian crises](https://danielnavarro.work/work/humanitarian-ai-reporting/)
+- [Procurement intelligence with RAG and ML](https://danielnavarro.work/work/procurement-intelligence/)
 
 ## Code
 - [Paz Total impact evaluation (R, TWFE, event study)](https://github.com/Daniel-Navarro-M/-I-m-Paz-Total_replication)
