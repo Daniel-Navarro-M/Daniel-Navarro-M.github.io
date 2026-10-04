@@ -19,4 +19,4 @@ Static HTML/CSS/JS, no build step. GitHub Pages serves the `main` branch root.
 4. Add the site URL to LinkedIn (Contact info + Featured), GitHub profile, email signature, ORCID. These backlinks drive name-search ranking.
 5. Validate structured data: https://search.google.com/test/rich-results
 
-When updating content, bump `dateModified` in the JSON-LD and `lastmod` in `sitemap.xml`.
+When updating content, bump `dateModified` in the JSON-LD (full ISO datetime with timezone, e.g. `2026-10-04T12:00:00+02:00`) and `lastmod` in `sitemap.xml`.
