@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OCHA-RAG: Contributions &amp; Handover | Daniel Navarro</title>
+<meta name="description" content="Four months building OCHA RAG, an AI situation-analysis system for UN OCHA: earthquake responses in the Philippines, Venezuela and Colombia, and the improvements shipped to each version, from citations and admin selection to human fact checking.">
+<link rel="canonical" href="https://danielnavarro.work/work/ocha-rag/">
+<link rel="alternate" hreflang="en" href="https://danielnavarro.work/work/ocha-rag/">
+<link rel="alternate" hreflang="fr" href="https://danielnavarro.work/fr/work/ocha-rag/">
+<link rel="alternate" hreflang="de" href="https://danielnavarro.work/de/work/ocha-rag/">
+<link rel="alternate" hreflang="x-default" href="https://danielnavarro.work/work/ocha-rag/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OCHA-RAG: contributions and handover">
+<meta property="og:description" content="Earthquake responses and the improvements I shipped to OCHA RAG, the UN OCHA AI situation-analysis system. Daniel Navarro, Geneva.">
+<meta property="og:url" content="https://danielnavarro.work/work/ocha-rag/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:28px 0 8px}
+.kpis div{padding:22px 16px;border-left:1px solid var(--line)}
+.kpis div:first-child{border-left:0;padding-left:0}
+.kpis b{display:block;font:700 clamp(2rem,4vw,2.8rem)/1 var(--display);font-stretch:75%;margin-bottom:8px}
+.kpis span{font-size:.84rem;color:var(--muted);line-height:1.4;display:block}
+@media (max-width:640px){.kpis{grid-template-columns:1fr 1fr}.kpis div:nth-child(3){border-left:0;padding-left:0}.kpis div:nth-child(n+3){border-top:1px solid var(--line)}}
+.article .cases{margin:20px 0 8px}
+.article .case p{margin:0 0 .6em}
+.article .case p b{color:var(--ink);font-weight:600}
+.article .case h3{font-size:1.35rem}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"OCHA-RAG: contributions and handover",
+ "about":["Retrieval-Augmented Generation","Humanitarian Information Management","Situation Analysis"],
+ "author":{"@type":"Person","@id":"https://danielnavarro.work/#person","name":"Daniel Navarro","url":"https://danielnavarro.work/"},
+ "datePublished":"2026-10-07T12:00:00+02:00","dateModified":"2026-10-07T12:00:00+02:00","inLanguage":"en","image":"https://danielnavarro.work/assets/img/og.png",
+ "mainEntityOfPage":"https://danielnavarro.work/work/ocha-rag/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools">
+    <a class="chip-btn" href="/fr/work/ocha-rag/" hreflang="fr" lang="fr" title="Version française">FR</a>
+    <a class="chip-btn" href="/de/work/ocha-rag/" hreflang="de" lang="de" title="Deutsche Version">DE</a>
+    <button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button>
+  </div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Project · Humanitarian AI · Jun–Oct 2026</p>
+  <h1>OCHA-RAG</h1>
+  <p class="lede">Four months on OCHA RAG, the AI system the UN OCHA Assessment &amp; Analysis Cell uses to draft situation analyses from the evidence a crisis produces. I used it in three earthquake responses, then turned what broke in the field into tested improvements to the product.</p>
+
+  <dl class="facts">
+    <div><dt>Context</dt><dd>UN OCHA HPCS, Assessment &amp; Analysis Cell, Geneva</dd></div>
+    <div><dt>Role</dt><dd>Information Management Intern</dd></div>
+    <div><dt>Stack</dt><dd>Rust · Postgres/pgvector · knowledge graph · Next.js · Python · Azure</dd></div>
+  </dl>
+
+  <div class="kpis">
+    <div><b>46</b><span>pull requests opened, 38 merged</span></div>
+    <div><b>77</b><span>commits across 5 repositories</span></div>
+    <div><b>3</b><span>earthquake responses supported</span></div>
+    <div><b>6 wks</b><span>spent on the reporting module</span></div>
+  </div>
+
+  <h2>Role and approach</h2>
+  <p>I worked with the Cell's lead developer on three versions of the system: a Python command-line pipeline built per event, a web interface for it deployed on Azure, and the current Rust service with a knowledge graph, vector search and a web console.</p>
+  <p>Each emergency was a live test. During the response I ran the tool and delivered what the office needed; afterwards I fixed the root cause in the product. Three rules guided the work: reproduce a defect on real data before naming its cause, make sure every new check can actually fail, and land every change through a reviewed pull request.</p>
+
+  <h2>Emergency responses</h2>
+  <div class="cases">
+    <article class="case wide">
+      <div class="kind"><span>Jun 2026</span><b>Philippines · M7.8</b></div>
+      <h3>Official figures behind a CAPTCHA</h3>
+      <p><b>Problem.</b> The national disaster agency's bulletins, the source for casualty figures, sat behind Cloudflare and a CAPTCHA.</p>
+      <p><b>Solution.</b> A browser-automation path with local drivers for restricted networks, then a pivot to mirror sites.</p>
+      <p class="outcome"><b>Impact:</b> official national figures reached the report pipeline during the response.</p>
+    </article>
+    <article class="case wide">
+      <div class="kind"><span>Jun–Jul 2026</span><b>Venezuela</b></div>
+      <h3>The RAG CLI and a web UI in production</h3>
+      <p><b>Problem.</b> Analysts needed reports within hours from a pipeline that had to be run by hand.</p>
+      <p><b>Solution.</b> Deployed a web interface on Azure, added event-anchored news search, number checking against authoritative figures, and cluster and needs-assessment templates.</p>
+      <p class="outcome"><b>Impact:</b> 4 situation-analysis editions, 3 cluster analyses and a needs assessment in two weeks; country offices trained to run it.</p>
+    </article>
+    <article class="case wide">
+      <div class="kind"><span>Aug 2026</span><b>Colombia · M7.4</b></div>
+      <h3>Hard-to-reach rural villages</h3>
+      <p><b>Problem.</b> Damage counts covered towns; dispersed rural settlements were invisible. The office also needed cluster-ready analysis.</p>
+      <p><b>Solution.</b> Coordination support and cluster briefs for the country office; sampled the ShakeMap intensity grid at every populated centre in six departments.</p>
+      <p class="outcome"><b>Impact:</b> 271 rural settlements at intensity VII–VIII flagged, 34 in Chocó, for access planning.</p>
+    </article>
+    <article class="case wide">
+      <div class="kind"><span>Aug 2026</span><b>Colombia · dashboard</b></div>
+      <h3>NASA satellite fire hazard map</h3>
+      <p><b>Problem.</b> The response dashboard had no view of fire activity around the epicentre.</p>
+      <p><b>Solution.</b> NASA FIRMS active-fire detections over the shaking bands, with a narrative where every fire figure comes from the data, never from the model.</p>
+      <p class="outcome"><b>Impact:</b> detections rose from 47 a day before the quake to 351 on quake day.</p>
+    </article>
+  </div>
+
+  <h2>Improvements: platform, ingestion and query</h2>
+  <ul class="list">
+    <li><b>Clean-up and ingestion under load.</b> Bulk uploads exhausted the database pool and dead code piled up. Batched writes and single-request uploads; 256,695 dead lines removed.</li>
+    <li><b>Fetch and geography hardening.</b> PDF-only reports became permanent failures and district figures were filed as national. Attachments kept, places resolved finest level first, and an endpoint that identifies one event across USGS, GDACS and WFP ADAM.</li>
+    <li><b>Multilingual answers.</b> Spanish and Bahasa questions skipped the current-figure logic. Same path in three languages, with national questions answered at national level.</li>
+    <li><b>Publication dates.</b> None of 95 hand-uploaded PDFs carried a date, hiding 28% of the corpus from date filters. Dates are now found at ingest and backfilled in place, and retrieval can be limited to a date window.</li>
+    <li><b>Workspace isolation.</b> Three graph endpoints could return another workspace's data. One shared rule closed it.</li>
+    <li><b>Measured before building.</b> A 72-query experiment showed place-scoped retrieval would cut topical relevance from 90% to 52%, so it was closed instead of built.</li>
+  </ul>
+
+  <h2>The reporting module</h2>
+  <p>About six weeks of the four months went here. The goal: a report an analyst can clear, written as prose, scoped to an area, with every figure grounded and every claim cited.</p>
+  <ul class="list">
+    <li><b>Reports as prose.</b> Templates with a thesis question, section objectives and writing briefs; a Spanish-language corpus grounds its figures again; background figures no longer leak into an earthquake report.</li>
+    <li><b>Admin selection.</b> A run is scoped by picking a country, department and municipality from official boundaries, so the report stays inside the chosen area.</li>
+    <li><b>Word export and custom templates.</b> Reports download in OCHA's Word format, and crisis cells design their own report structure without a code change.</li>
+    <li><b>Citations.</b> Stored as data rather than left to the model, renumbered in reading order, kept through the editing pass (6 of 6 test runs kept every marker), one hover tooltip per claim.</li>
+    <li><b>Fact checking.</b> A Figures tab where a person verifies, withdraws or adds a figure. A verified figure becomes the report's figure everywhere, and the other reported values stay visible.</li>
+    <li><b>Numeric guard reliability.</b> Whole-run failures caused by run-together dates removed, and every dropped judgement is now logged with its reason.</li>
+  </ul>
+
+  <p class="callout">The design rule behind all of it: <b>a person decides the numbers, the engine shows its sources.</b> Figures from different sources are never averaged or summed by a model; a verified figure settles the headline and the spread stays visible.</p>
+
+  <h2>Where it goes next</h2>
+  <ul class="list">
+    <li><b>A single metric registry.</b> The metric vocabulary is kept by hand in seven places. One registry should declare each metric's type, whether it can be summed across places, and its standard (Sendai, HXL, JIAF), with a test that fails when code emits an undeclared metric.</li>
+    <li><b>Ledger quality.</b> Record which event each figure belongs to, choose a headline when none is verified, and track where a figure originated so a repeated figure is not counted as a second source.</li>
+    <li><b>Wire up or remove unused rules.</b> The impact-to-need inference rules have never fired; they should be connected or deleted.</li>
+  </ul>
+  <p>For questions about OCHA RAG or AI in humanitarian analysis, <a href="/#contact">get in touch</a>.</p>
+
+  <p style="font-size:.85rem;color:var(--muted)">This page describes my own contribution at a high level. It does not represent the official views of the United Nations, and no internal data, code or documents are shared.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/humanitarian-ai-reporting/">Next: Grounded AI reporting for humanitarian crises →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

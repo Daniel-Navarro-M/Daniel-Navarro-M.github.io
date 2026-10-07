@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OCHA-RAG : contributions et passation | Daniel Navarro</title>
+<meta name="description" content="Quatre mois sur OCHA RAG, le système d'IA d'analyse de situation d'OCHA : réponses aux séismes aux Philippines, au Venezuela et en Colombie, et les améliorations apportées à chaque version, des citations au choix de la zone administrative et à la vérification humaine des chiffres.">
+<link rel="canonical" href="https://danielnavarro.work/fr/work/ocha-rag/">
+<link rel="alternate" hreflang="en" href="https://danielnavarro.work/work/ocha-rag/">
+<link rel="alternate" hreflang="fr" href="https://danielnavarro.work/fr/work/ocha-rag/">
+<link rel="alternate" hreflang="de" href="https://danielnavarro.work/de/work/ocha-rag/">
+<link rel="alternate" hreflang="x-default" href="https://danielnavarro.work/work/ocha-rag/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="OCHA-RAG : contributions et passation">
+<meta property="og:description" content="Réponses aux séismes et améliorations apportées à OCHA RAG, le système d'IA d'analyse de situation d'OCHA. Daniel Navarro, Genève.">
+<meta property="og:url" content="https://danielnavarro.work/fr/work/ocha-rag/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:28px 0 8px}
+.kpis div{padding:22px 16px;border-left:1px solid var(--line)}
+.kpis div:first-child{border-left:0;padding-left:0}
+.kpis b{display:block;font:700 clamp(2rem,4vw,2.8rem)/1 var(--display);font-stretch:75%;margin-bottom:8px}
+.kpis span{font-size:.84rem;color:var(--muted);line-height:1.4;display:block}
+@media (max-width:640px){.kpis{grid-template-columns:1fr 1fr}.kpis div:nth-child(3){border-left:0;padding-left:0}.kpis div:nth-child(n+3){border-top:1px solid var(--line)}}
+.article .cases{margin:20px 0 8px}
+.article .case p{margin:0 0 .6em}
+.article .case p b{color:var(--ink);font-weight:600}
+.article .case h3{font-size:1.35rem}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"OCHA-RAG : contributions et passation",
+ "about":["Retrieval-Augmented Generation","Gestion de l'information humanitaire","Analyse de situation"],
+ "author":{"@type":"Person","@id":"https://danielnavarro.work/#person","name":"Daniel Navarro","url":"https://danielnavarro.work/"},
+ "datePublished":"2026-10-07T12:00:00+02:00","dateModified":"2026-10-07T12:00:00+02:00","inLanguage":"fr","image":"https://danielnavarro.work/assets/img/og.png",
+ "mainEntityOfPage":"https://danielnavarro.work/fr/work/ocha-rag/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/fr/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Principal"><ul><li><a href="/fr/#work">Projets</a></li><li><a href="/fr/#experience">Expérience</a></li><li><a href="/cv/" hreflang="en">CV</a></li><li><a href="/fr/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools">
+    <a class="chip-btn" href="/work/ocha-rag/" hreflang="en" lang="en" title="English version">EN</a>
+    <a class="chip-btn" href="/de/work/ocha-rag/" hreflang="de" lang="de" title="Deutsche Version">DE</a>
+    <button class="chip-btn" id="theme" type="button" aria-label="Changer de thème">◐</button>
+  </div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/fr/#work">← Tous les projets</a>
+  <p class="eyebrow">Projet · IA humanitaire · juin–oct. 2026</p>
+  <h1>OCHA-RAG</h1>
+  <p class="lede">Quatre mois sur OCHA RAG, le système d'IA que la cellule Évaluation et analyse d'OCHA utilise pour rédiger des analyses de situation à partir des informations produites par une crise. Je l'ai utilisé lors de trois séismes, puis j'ai transformé ce qui ne fonctionnait pas sur le terrain en améliorations testées du produit.</p>
+
+  <dl class="facts">
+    <div><dt>Contexte</dt><dd>UN OCHA HPCS, cellule Évaluation et analyse, Genève</dd></div>
+    <div><dt>Rôle</dt><dd>Stagiaire en gestion de l'information</dd></div>
+    <div><dt>Technologies</dt><dd>Rust · Postgres/pgvector · graphe de connaissances · Next.js · Python · Azure</dd></div>
+  </dl>
+
+  <div class="kpis">
+    <div><b>46</b><span>pull requests ouvertes, 38 intégrées</span></div>
+    <div><b>77</b><span>commits dans 5 dépôts</span></div>
+    <div><b>3</b><span>réponses à des séismes</span></div>
+    <div><b>6 sem.</b><span>consacrées au module de rapports</span></div>
+  </div>
+
+  <h2>Rôle et démarche</h2>
+  <p>J'ai travaillé avec le développeur principal de la cellule sur trois versions du système : un pipeline Python en ligne de commande construit pour chaque événement, une interface web déployée sur Azure, et le service actuel en Rust, avec un graphe de connaissances, une recherche vectorielle et une console web.</p>
+  <p>Chaque urgence a servi de test en conditions réelles. Pendant la réponse, je faisais tourner l'outil et livrais ce dont le bureau avait besoin ; ensuite, je corrigeais la cause du problème dans le produit. Trois règles ont guidé le travail : reproduire un défaut sur des données réelles avant d'en nommer la cause, vérifier que chaque nouveau contrôle peut réellement échouer, et intégrer chaque modification par une pull request relue.</p>
+
+  <h2>Réponses aux urgences</h2>
+  <div class="cases">
+    <article class="case wide">
+      <div class="kind"><span>Juin 2026</span><b>Philippines · M7,8</b></div>
+      <h3>Des chiffres officiels derrière un CAPTCHA</h3>
+      <p><b>Problème.</b> Les bulletins de l'agence nationale de gestion des catastrophes, source des chiffres sur les victimes, étaient protégés par Cloudflare et un CAPTCHA.</p>
+      <p><b>Solution.</b> Une collecte par navigateur automatisé, avec des pilotes locaux pour les réseaux restreints, puis le passage à des sites miroirs.</p>
+      <p class="outcome"><b>Impact :</b> les chiffres nationaux officiels ont alimenté le pipeline de rapports pendant la réponse.</p>
+    </article>
+    <article class="case wide">
+      <div class="kind"><span>Juin–juil. 2026</span><b>Venezuela</b></div>
+      <h3>Le CLI RAG et une interface web en production</h3>
+      <p><b>Problème.</b> Les analystes avaient besoin de rapports en quelques heures, avec un pipeline qu'il fallait lancer à la main.</p>
+      <p><b>Solution.</b> Déploiement d'une interface web sur Azure, recherche d'actualités ancrée sur l'événement, vérification des chiffres auprès de sources de référence, et modèles pour les analyses par cluster et l'évaluation des besoins.</p>
+      <p class="outcome"><b>Impact :</b> 4 éditions d'analyse de situation, 3 analyses par cluster et une évaluation des besoins en deux semaines ; bureaux pays formés à son utilisation.</p>
+    </article>
+    <article class="case wide">
+      <div class="kind"><span>Août 2026</span><b>Colombie · M7,4</b></div>
+      <h3>Villages ruraux difficiles d'accès</h3>
+      <p><b>Problème.</b> Les bilans couvraient les villes ; les hameaux ruraux dispersés restaient invisibles. Le bureau avait aussi besoin d'analyses prêtes pour les clusters.</p>
+      <p><b>Solution.</b> Appui à la coordination et notes par cluster pour le bureau pays ; croisement de la grille d'intensité ShakeMap avec chaque centre habité de six départements.</p>
+      <p class="outcome"><b>Impact :</b> 271 localités rurales à intensité VII–VIII signalées, dont 34 dans le Chocó, pour planifier l'accès.</p>
+    </article>
+    <article class="case wide">
+      <div class="kind"><span>Août 2026</span><b>Colombie · tableau de bord</b></div>
+      <h3>Carte satellite des incendies de la NASA</h3>
+      <p><b>Problème.</b> Le tableau de bord de la réponse ne montrait pas l'activité des incendies autour de l'épicentre.</p>
+      <p><b>Solution.</b> Les détections d'incendies actifs NASA FIRMS superposées aux zones de secousse, avec un récit où chaque chiffre vient des données, jamais du modèle.</p>
+      <p class="outcome"><b>Impact :</b> les détections sont passées de 47 par jour avant le séisme à 351 le jour du séisme.</p>
+    </article>
+  </div>
+
+  <h2>Améliorations : plateforme, ingestion et requêtes</h2>
+  <ul class="list">
+    <li><b>Nettoyage et ingestion sous charge.</b> Les envois groupés saturaient la base de données et le code mort s'accumulait. Écritures groupées et envoi en une seule requête ; 256 695 lignes mortes supprimées.</li>
+    <li><b>Collecte et géographie fiabilisées.</b> Les rapports composés uniquement de PDF échouaient définitivement et des chiffres départementaux étaient classés comme nationaux. Pièces jointes conservées, lieux résolus du niveau le plus fin au plus large, et un service qui identifie un même événement dans USGS, GDACS et WFP ADAM.</li>
+    <li><b>Réponses multilingues.</b> Les questions en espagnol et en bahasa contournaient la logique des chiffres actuels. Même traitement dans les trois langues, et les questions nationales reçoivent le chiffre national.</li>
+    <li><b>Dates de publication.</b> Aucun des 95 PDF téléversés à la main n'était daté, ce qui cachait 28 % du corpus aux filtres par date. Les dates sont désormais trouvées à l'ingestion et ajoutées au corpus existant, et la recherche peut être limitée à une période.</li>
+    <li><b>Isolation des espaces de travail.</b> Trois services du graphe pouvaient renvoyer les données d'un autre espace de travail. Une règle commune a fermé cette faille.</li>
+    <li><b>Mesurer avant de construire.</b> Une expérience sur 72 requêtes a montré qu'une recherche limitée par lieu ferait chuter la pertinence de 90 % à 52 % ; l'idée a donc été abandonnée au lieu d'être construite.</li>
+  </ul>
+
+  <h2>Le module de rapports</h2>
+  <p>Environ six des seize semaines y ont été consacrées. L'objectif : un rapport qu'un analyste peut valider, rédigé en prose, limité à une zone, avec chaque chiffre fondé sur une source et chaque affirmation citée.</p>
+  <ul class="list">
+    <li><b>Des rapports en prose.</b> Modèles avec une question centrale, des objectifs par section et des consignes de rédaction ; un corpus en espagnol fonde à nouveau ses chiffres ; les chiffres de contexte n'entrent plus dans un rapport sur un séisme.</li>
+    <li><b>Choix de la zone administrative.</b> Une analyse se limite à un pays, un département et une municipalité choisis dans les limites officielles, et le rapport reste dans la zone choisie.</li>
+    <li><b>Export Word et modèles personnalisés.</b> Les rapports se téléchargent au format Word d'OCHA, et les cellules de crise conçoivent leur propre structure de rapport sans modifier le code.</li>
+    <li><b>Citations.</b> Enregistrées comme des données plutôt que laissées au modèle, renumérotées dans l'ordre de lecture, conservées lors de la relecture automatique (6 tests sur 6 ont gardé chaque marqueur), une infobulle par affirmation.</li>
+    <li><b>Vérification des chiffres.</b> Un onglet Chiffres où une personne valide, retire ou ajoute un chiffre. Un chiffre validé devient celui du rapport partout, et les autres valeurs signalées restent visibles.</li>
+    <li><b>Fiabilité du contrôle numérique.</b> Fin des échecs d'analyse complets causés par des dates écrites sans séparateurs, et chaque jugement écarté est désormais journalisé avec sa raison.</li>
+  </ul>
+
+  <p class="callout">La règle derrière tout cela : <b>une personne décide des chiffres, le moteur montre ses sources.</b> Un modèle ne fait jamais la moyenne ni la somme de chiffres issus de sources différentes ; un chiffre validé tranche, et l'éventail des valeurs reste visible.</p>
+
+  <h2>La suite</h2>
+  <ul class="list">
+    <li><b>Un registre unique des indicateurs.</b> Le vocabulaire des indicateurs est tenu à la main à sept endroits. Un registre unique devrait déclarer, pour chaque indicateur, son type, s'il peut être additionné entre lieux, et sa norme de référence (Sendai, HXL, JIAF), avec un test qui échoue dès que le code émet un indicateur non déclaré.</li>
+    <li><b>Qualité du registre des chiffres.</b> Indiquer à quel événement appartient chaque chiffre, choisir un chiffre principal quand aucun n'est validé, et suivre l'origine d'un chiffre pour qu'une reprise ne compte pas comme une deuxième source.</li>
+    <li><b>Activer ou supprimer les règles inutilisées.</b> Les règles d'inférence entre impacts et besoins ne se sont jamais déclenchées ; il faut les connecter ou les supprimer.</li>
+  </ul>
+  <p>Pour toute question sur OCHA RAG ou sur l'IA au service de l'analyse humanitaire, <a href="/fr/#contact">contactez-moi</a>.</p>
+
+  <p style="font-size:.85rem;color:var(--muted)">Cette page décrit ma propre contribution dans les grandes lignes. Elle ne représente pas les positions officielles des Nations Unies, et aucune donnée, aucun code ni document interne n'est partagé.</p>
+
+  <nav class="next" aria-label="Autres projets">
+    <a href="/fr/#work">← Retour aux projets</a>
+    <a href="/work/humanitarian-ai-reporting/" hreflang="en">Suite : rapports IA pour les crises humanitaires (EN) →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Genève</span><span><a href="/fr/">Accueil</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
