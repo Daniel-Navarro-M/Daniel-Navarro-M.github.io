@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pesticides and Parkinson&#x27;s Disease: Geospatial Machine Learning in Colombia | Daniel Navarro</title>
+<meta name="description" content="Unpublished research: georeferenced patient surveys, nearest-neighbour clustering by distance to crops and XGBoost to study farmland proximity and Parkinson&#x27;s disease severity in Colombia.">
+<link rel="canonical" href="https://danielnavarro.work/work/parkinsons-geospatial-ml/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pesticides and Parkinson&#x27;s Disease: Geospatial Machine Learning in Colombia">
+<meta property="og:description" content="Unpublished research: georeferenced patient surveys, nearest-neighbour clustering by distance to crops and XGBoost to study farmland proximity and Parkinson&#x27;s disease severity in Colombia.">
+<meta property="og:url" content="https://danielnavarro.work/work/parkinsons-geospatial-ml/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Pesticides and Parkinson's disease: geospatial machine learning", "description": "Unpublished research: georeferenced patient surveys, nearest-neighbour clustering by distance to crops and XGBoost to study farmland proximity and Parkinson's disease severity in Colombia.", "about": ["Machine Learning", "GIS", "Public Health", "Parkinson's Disease", "XGBoost"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/parkinsons-geospatial-ml/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · Health research, Universidad Icesi · 2023 to 2025 · Unpublished</p>
+  <h1>Pesticides and Parkinson's disease: geospatial machine learning</h1>
+  <p class="lede">At Universidad Icesi's I2T lab I worked on a question doctors in the region kept raising: do Parkinson's patients who live close to crops, and so to pesticides, have worse symptoms? I georeferenced patients from field surveys and built the spatial and machine-learning analysis.</p>
+
+  <dl class="facts">
+    <div><dt>Context</dt><dd>I2T lab, Universidad Icesi</dd></div>
+    <div><dt>Data</dt><dd>6 field brigades · ~100 surveys</dd></div>
+    <div><dt>Status</dt><dd>Unpublished research</dd></div>
+  </dl>
+
+  <h2>From field surveys to coordinates</h2>
+  <p>The data came from six field brigades and about 100 patient surveys. I geocoded each patient's home and measured its distance to farmland and to crop mosaics, using land-cover layers in QGIS.</p>
+
+  <h2>Method</h2>
+  <p>Nearest-neighbour clustering grouped patients into three groups by proximity to crops. I then trained an XGBoost classifier to predict disease stage (Hoehn &amp; Yahr) from geographic and environmental features, and used feature importance to see which ones mattered.</p>
+
+  <h2>Results: unpublished</h2>
+  <p>The results belong to the I2T lab's ongoing research and have not been published, so they are not shown here. I presented them internally to the lab's doctors, engineers and designers.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/knowledge-graph-company-intelligence/">Next: Knowledge-graph company intelligence with RAG →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

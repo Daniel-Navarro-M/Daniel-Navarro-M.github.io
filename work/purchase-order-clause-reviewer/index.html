@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Purchase Order Review: Extracting Quality Clauses with OCR and LLMs | Daniel Navarro</title>
+<meta name="description" content="An AI tool that reads scanned defense purchase orders, extracts quality clause codes with verbatim evidence, resolves them against the right manual revision and pre-fills the quality checklist, for about $0.02 per order.">
+<link rel="canonical" href="https://danielnavarro.work/work/purchase-order-clause-reviewer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Purchase Order Review: Extracting Quality Clauses with OCR and LLMs">
+<meta property="og:description" content="An AI tool that reads scanned defense purchase orders, extracts quality clause codes with verbatim evidence, resolves them against the right manual revision and pre-fills the quality checklist, for about $0.02 per order.">
+<meta property="og:url" content="https://danielnavarro.work/work/purchase-order-clause-reviewer/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "AI review of quality clauses in purchase orders", "description": "An AI tool that reads scanned defense purchase orders, extracts quality clause codes with verbatim evidence, resolves them against the right manual revision and pre-fills the quality checklist, for about $0.02 per order.", "about": ["Document AI", "OCR", "LLM", "Contract Review", "Quality Management"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/purchase-order-clause-reviewer/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · Document AI, Instrumental Partners · 2026</p>
+  <h1>AI review of quality clauses in purchase orders</h1>
+  <p class="lede">The quality team of a US defense electronics manufacturer reviews every customer purchase order by hand. They find each quality code, look it up in the right revision of that customer's manual, decide whether it applies to the whole order or to one line, and fill in a checklist. A missed code is expensive. I built the tool that does the first pass, at about two cents per order.</p>
+
+  <dl class="facts">
+    <div><dt>Context</dt><dd>Instrumental Partners · client confidential</dd></div>
+    <div><dt>Cost</dt><dd>$0.022 per order (measured)</dd></div>
+    <div><dt>Stack</dt><dd>Python · OCR · GPT-4o · FastAPI</dd></div>
+  </dl>
+
+  <h2>The rules the system follows</h2>
+  <p>Quality reviewers need to trust every line, so the design starts from a short set of rules:</p>
+  <ul class="list">
+    <li>Every extracted requirement carries its exact text, and that text must be found word for word on the page.</li>
+    <li>Every requirement carries its evidence: document, page and position.</li>
+    <li>Applicability is explicit: whole order, one line item, or ambiguous for a human to decide.</li>
+    <li>Codes resolve by exact match against one revision of the customer's clause manual.</li>
+    <li>Whether a code is routine, uncommon or new is computed in SQL from order history. The LLM never decides it.</li>
+  </ul>
+
+  <h2>Two readers that check each other</h2>
+  <p>Orders arrive as native PDFs and as scans. Pages are rendered with PyMuPDF and read twice, by OCR (RapidOCR at two resolutions) and by a vision model (<code>gpt-4o</code>). The two readings are reconciled with a confusion set for characters OCR mixes up, like O and 0 or I and 1. An OpenCV reader measures ink density to detect ticked checkboxes. On native-text pages, vision added no correct codes in testing and invented three, so it is skipped there, which covers about two thirds of all pages.</p>
+  <p>Each customer writes clause codes in its own format. The system learns those shapes from the customer's documents and verifies matches deterministically. Federal FAR and DFARS clauses are bundled as data. For customers who publish no clause manual (8 of 19 in the archive), an order-only mode still extracts and flags requirements.</p>
+
+  <h2>Numbers</h2>
+  <ul class="list">
+    <li>Measured cost: 19 orders for $0.42, so <b>$0.022 per order</b>. The full backlog of 744 orders comes to an estimated $16.50.</li>
+    <li>Archive swept: 2,700 PDFs across 19 customers.</li>
+    <li>A 9-page, 24-line order that used to break OCR now reads 24 of 24 lines with every code.</li>
+    <li>An evaluation harness scores recall, precision, applicability, source accuracy and false confidence against hand-labelled orders. The targets are recall of at least 0.95 and false confidence of at most 0.05.</li>
+  </ul>
+
+  <h2>Stack</h2>
+  <p>Python 3.12, FastAPI, SQLite, S3-compatible storage, a plain JavaScript interface, pytest and GitHub Actions, deployed with Docker on AWS EC2 behind a login. There is no vector database: retrieval walks the structure of the clause manual, which suits documents organised by code. Every design trade-off goes into a decisions log, which has 169 entries so far.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/bid-price-prediction/">Next: Machine learning for defense bid pricing →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

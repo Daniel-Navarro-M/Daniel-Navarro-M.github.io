@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapping the US Aviation Repair Station Market from FAA Part 145 Data | Daniel Navarro</title>
+<meta name="description" content="Turning 5,027 FAA Part 145 repair-station certificates into a deduplicated, enriched and geocoded market map of 3,663 companies for a display manufacturer&#x27;s sales team.">
+<link rel="canonical" href="https://danielnavarro.work/work/aviation-repair-station-market-map/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mapping the US Aviation Repair Station Market from FAA Part 145 Data">
+<meta property="og:description" content="Turning 5,027 FAA Part 145 repair-station certificates into a deduplicated, enriched and geocoded market map of 3,663 companies for a display manufacturer&#x27;s sales team.">
+<meta property="og:url" content="https://danielnavarro.work/work/aviation-repair-station-market-map/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Mapping the US aviation repair station market", "description": "Turning 5,027 FAA Part 145 repair-station certificates into a deduplicated, enriched and geocoded market map of 3,663 companies for a display manufacturer's sales team.", "about": ["Market Research", "Data Enrichment", "Entity Resolution", "GIS", "Aviation MRO"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/aviation-repair-station-market-map/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · Market data, Instrumental Partners · 2025</p>
+  <h1>Mapping the US aviation repair station market</h1>
+  <p class="lede">A display manufacturer wanted to sell to aviation repair stations but had no list of who they are, how big they are or where they sit. The FAA publishes every certified repair station, and I turned that list into a market map the sales team could use.</p>
+
+  <dl class="facts">
+    <div><dt>Context</dt><dd>Instrumental Partners · client confidential</dd></div>
+    <div><dt>Source</dt><dd>FAA Part 145 certificates</dd></div>
+    <div><dt>Result</dt><dd>3,663 companies, enriched</dd></div>
+  </dl>
+
+  <h2>From certificates to companies</h2>
+  <p>The FAA list has 5,027 Part 145 certificates, and one company can hold several, at different sites and under slightly different names. Fuzzy name matching collapsed them into <b>3,663 unique companies</b>, 420 of which hold more than one certificate. About 79% of certificates are in the United States.</p>
+
+  <h2>Enrichment</h2>
+  <p>Each company got its website (found for 3,361), firmographics from the Apollo API, and coordinates from geocoding. About 1,080 companies have a known parent revenue, with a median of $22.8 million. Everything sits in SQLite, so the list can be refreshed when the FAA updates its data.</p>
+
+  <h2>What the sales team got</h2>
+  <p>A ranked, mapped list of repair stations by size and region, ready to load into the CRM. The same pattern, public registry in and clean enriched companies out, now feeds the <a href="/work/knowledge-graph-company-intelligence/">company knowledge graph</a>.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/paz-total-colombia/">Next: Did Colombia's Total Peace policy reduce violence? →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

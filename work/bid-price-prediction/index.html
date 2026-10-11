@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Machine Learning for Bid Pricing on US Defense Supply Contracts | Daniel Navarro</title>
+<meta name="description" content="A cascade of XGBoost classifiers and a neural network that predicts the next winning unit price for DLA spare-parts solicitations, tracked in MLflow and served against live opportunities.">
+<link rel="canonical" href="https://danielnavarro.work/work/bid-price-prediction/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning for Bid Pricing on US Defense Supply Contracts">
+<meta property="og:description" content="A cascade of XGBoost classifiers and a neural network that predicts the next winning unit price for DLA spare-parts solicitations, tracked in MLflow and served against live opportunities.">
+<meta property="og:url" content="https://danielnavarro.work/work/bid-price-prediction/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Machine learning for bid pricing on defense supply contracts", "description": "A cascade of XGBoost classifiers and a neural network that predicts the next winning unit price for DLA spare-parts solicitations, tracked in MLflow and served against live opportunities.", "about": ["Machine Learning", "Price Prediction", "XGBoost", "MLflow", "Government Contracting"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/bid-price-prediction/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · Machine learning, Instrumental Partners · 2025 to 2026</p>
+  <h1>Machine learning for bid pricing on defense supply contracts</h1>
+  <p class="lede">A US aircraft-lighting manufacturer bids on Defense Logistics Agency solicitations for spare parts, each identified by a National Stock Number (NSN). For every open solicitation it needs a price that wins without leaving money on the table. I built the model that suggests it.</p>
+
+  <dl class="facts">
+    <div><dt>Context</dt><dd>Instrumental Partners · client confidential</dd></div>
+    <div><dt>Best model</dt><dd>MedAPE 7.7% vs ~10% baseline</dd></div>
+    <div><dt>Stack</dt><dd>Python · XGBoost · MLflow · EC2</dd></div>
+  </dl>
+
+  <h2>Start from the obvious baseline</h2>
+  <p>The simplest rule is to bid the last winning price, and any model has to beat it. So the target is the change from the last observed price, in log terms. Features include lags, rolling statistics, price bands and market features about the other suppliers approved for the same part. Training is weighted by contract value, and the test set takes the most recent award for each NSN, which is the situation the client actually faces.</p>
+
+  <h2>Nineteen models, one cascade</h2>
+  <p>I compared OLS, SVM, naive Bayes, XGBoost, neural networks and quantile models. The winner is a cascade. XGBoost classifiers first decide whether the price will move by more than 1% (AUC 0.86), by more than 5% (AUC 0.86), and in which direction (AUC 0.89). Only when a real move is expected, for about 54% of rows, does a neural network estimate its size.</p>
+
+  <h2>Results</h2>
+  <ul class="list">
+    <li>On the most recent award per NSN: median absolute percentage error of <b>7.7%</b> against about 10% for the last-price rule, MAE of $2,480 against $3,400, and R² of 0.48 where the baseline is negative.</li>
+    <li>43% of predictions land within 5% of the real price, and 78% within 50%.</li>
+    <li>On a separate holdout of 2,196 NSNs the gap is narrower: 19.1% against 20.0% for the last price. About three quarters of parts are stable enough that the last price is the right bid, and the model earns its keep on the volatile rest.</li>
+  </ul>
+  <p>That second result changed how the tool is used. It now tells the bidder when to repeat the last price and when a part needs attention.</p>
+
+  <h2>In production</h2>
+  <p>Models are tracked and versioned in MLflow, with a production alias. The model scores active solicitations scraped from DIBBS and writes its suggestions next to the opportunity data in PostgreSQL on AWS EC2, where the sales team sees them in their dashboards. The data pipeline behind it is described in <a href="/work/procurement-intelligence/">procurement intelligence</a>.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/erp-manufacturing-dashboards/">Next: ERP to dashboards for a manufacturer →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

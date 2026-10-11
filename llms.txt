@@ -10,13 +10,25 @@
 - [CV](https://danielnavarro.work/cv/): full curriculum vitae
 
 ## Current roles
-- Data Engineer & BI Consultant, Instrumental Partners LLC (Jul 2025 to present, remote from Geneva): RAG and graph knowledge base, scraping and ETL over 1M+ procurement contracts, BI dashboards, pricing ML
+- Data Engineer & BI Consultant, Instrumental Partners LLC (Jul 2025 to present, remote from Geneva): RAG and graph knowledge base, scraping and ETL over 1.1M supplier-part records and 95k contract awards, BI dashboards, pricing ML
 - Information Management Intern, UN OCHA Geneva (Jun 2026 to present): graph-grounded AI report generation for humanitarian crises, Docker/Azure
 
 ## Case studies
 - [OCHA-RAG: earthquake responses and the reporting module](https://danielnavarro.work/work/ocha-rag/)
 - [Grounded AI reporting for humanitarian crises](https://danielnavarro.work/work/humanitarian-ai-reporting/)
 - [Procurement intelligence with RAG and ML](https://danielnavarro.work/work/procurement-intelligence/)
+- [Company intelligence with a knowledge graph and RAG (Neo4j, LLMs)](https://danielnavarro.work/work/knowledge-graph-company-intelligence/)
+- [AI review of quality clauses in purchase orders (OCR, GPT-4o)](https://danielnavarro.work/work/purchase-order-clause-reviewer/)
+- [Machine learning for bid pricing on defense supply contracts](https://danielnavarro.work/work/bid-price-prediction/)
+- [From ERP to dashboards: cost and operations BI for a manufacturer](https://danielnavarro.work/work/erp-manufacturing-dashboards/)
+- [Mapping the US aviation repair station market (FAA Part 145)](https://danielnavarro.work/work/aviation-repair-station-market-map/)
+- [MA thesis: did Colombia's Total Peace policy reduce violence?](https://danielnavarro.work/work/paz-total-colombia/)
+- [Parental investment and learning gaps in the Western Balkans (World Bank, TIMSS)](https://danielnavarro.work/work/world-bank-timss-balkans/)
+- [NLP of Haitian migration discourse in the Dominican Republic](https://danielnavarro.work/work/dominican-migration-nlp/)
+- [Corruption risk in Rail Baltica procurement](https://danielnavarro.work/work/rail-baltica-corruption-risk/)
+- [Blackpolis: mapping structural racism in Cali](https://danielnavarro.work/work/blackpolis-cali/)
+- [K-means clustering of Cali's metropolitan vote (GEOgraphia 2025)](https://danielnavarro.work/work/cali-electoral-clustering/)
+- [Pesticides and Parkinson's disease: geospatial ML](https://danielnavarro.work/work/parkinsons-geospatial-ml/)
 
 ## Code
 - [Paz Total impact evaluation (R, TWFE, event study)](https://github.com/Daniel-Navarro-M/-I-m-Paz-Total_replication)

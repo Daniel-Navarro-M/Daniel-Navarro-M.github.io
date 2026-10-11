@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://danielnavarro.work/</loc><lastmod>2026-10-04</lastmod><priority>1.0</priority></url>
-  <url><loc>https://danielnavarro.work/fr/</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
-  <url><loc>https://danielnavarro.work/de/</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
+  <url><loc>https://danielnavarro.work/</loc><lastmod>2026-10-11</lastmod><priority>1.0</priority></url>
+  <url><loc>https://danielnavarro.work/fr/</loc><lastmod>2026-10-11</lastmod><priority>0.9</priority></url>
+  <url><loc>https://danielnavarro.work/de/</loc><lastmod>2026-10-11</lastmod><priority>0.9</priority></url>
   <url><loc>https://danielnavarro.work/cv/</loc><lastmod>2026-10-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://danielnavarro.work/work/ocha-rag/</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://danielnavarro.work/fr/work/ocha-rag/</loc><lastmod>2026-10-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://danielnavarro.work/de/work/ocha-rag/</loc><lastmod>2026-10-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://danielnavarro.work/work/humanitarian-ai-reporting/</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
-  <url><loc>https://danielnavarro.work/work/procurement-intelligence/</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/procurement-intelligence/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/knowledge-graph-company-intelligence/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/purchase-order-clause-reviewer/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/bid-price-prediction/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/erp-manufacturing-dashboards/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/aviation-repair-station-market-map/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/paz-total-colombia/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/world-bank-timss-balkans/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/dominican-migration-nlp/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/rail-baltica-corruption-risk/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/blackpolis-cali/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/cali-electoral-clustering/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://danielnavarro.work/work/parkinsons-geospatial-ml/</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
 </urlset>

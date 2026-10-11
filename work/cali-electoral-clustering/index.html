@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Electoral Behaviour Beyond City Limits: K-Means Clustering of Polling Stations in Cali | Daniel Navarro</title>
+<meta name="description" content="Unsupervised machine learning on about 700 polling stations around Cali, Colombia, to study the metropolitanisation of voting. First prize, FLACSO TechPolítica 2024; published in GEOgraphia (2025).">
+<link rel="canonical" href="https://danielnavarro.work/work/cali-electoral-clustering/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Electoral Behaviour Beyond City Limits: K-Means Clustering of Polling Stations in Cali">
+<meta property="og:description" content="Unsupervised machine learning on about 700 polling stations around Cali, Colombia, to study the metropolitanisation of voting. First prize, FLACSO TechPolítica 2024; published in GEOgraphia (2025).">
+<meta property="og:url" content="https://danielnavarro.work/work/cali-electoral-clustering/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Electoral behaviour beyond city limits: K-means on Cali's polling stations", "description": "Unsupervised machine learning on about 700 polling stations around Cali, Colombia, to study the metropolitanisation of voting. First prize, FLACSO TechPolítica 2024; published in GEOgraphia (2025).", "about": ["Machine Learning", "Clustering", "Electoral Geography", "Cali", "Colombia"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/cali-electoral-clustering/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · Research, Universidad Icesi · 2024 to 2025</p>
+  <h1>Electoral behaviour beyond city limits: K-means on Cali's polling stations</h1>
+  <p class="lede">With Juan Pablo Milanese at Universidad Icesi, I used clustering to ask whether the vote around Cali follows municipal borders or a wider metropolitan pattern. The method won first place in FLACSO Ecuador's TechPolítica contest in 2024, and the paper was published in GEOgraphia in 2025.</p>
+
+  <dl class="facts">
+    <div><dt>Data</dt><dd>2022 Senate results · ~700 polling stations</dd></div>
+    <div><dt>Area</dt><dd>21 municipalities, 2 departments</dd></div>
+    <div><dt>Methods</dt><dd>K-means · DBSCAN · OPTICS</dd></div>
+  </dl>
+
+  <h2>Why clustering</h2>
+  <p>Electoral studies usually treat each municipality as its own unit. Metropolitan areas do not respect those lines: people commute, move and vote across them. Clustering polling stations on their results, with no borders built in, shows which places vote alike, whatever municipality they belong to.</p>
+
+  <h2>Data and method</h2>
+  <p>We used Registraduría results for the 2022 Senate election from about 700 polling stations in 21 municipalities across two departments. The main model is K-means, with the number of clusters chosen by silhouette score (between 4 and 6). To check that the groups are not an artefact of one algorithm, I re-ran the analysis with DBSCAN, OPTICS, BIRCH and Gaussian mixture models.</p>
+
+  <h2>Results</h2>
+  <p>The algorithms broadly agree on the clusters, so the metropolitan pattern is stable across methods. The main exception is Palmira, which falls outside the Cali cluster under the density-based methods (DBSCAN and OPTICS).</p>
+
+  <h2>Publication</h2>
+  <p>Milanese, J. P. &amp; Navarro, D. (2025). <i>Más allá de los límites municipales: análisis de la metropolización del comportamiento electoral en Cali utilizando K-Means Clustering.</i> GEOgraphia (Universidade Federal Fluminense).</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/parkinsons-geospatial-ml/">Next: Geospatial ML for Parkinson's disease →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

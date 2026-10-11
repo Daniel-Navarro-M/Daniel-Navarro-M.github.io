@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Did Colombia&#x27;s Total Peace Policy Reduce Violence? Panel Data Evaluation | Daniel Navarro</title>
+<meta name="description" content="MA thesis at CEU: an impact evaluation of Colombia&#x27;s Paz Total policy in Buenaventura, Arauca and Tumaco, using police and ACLED data, two-way fixed effects and negative binomial models.">
+<link rel="canonical" href="https://danielnavarro.work/work/paz-total-colombia/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Did Colombia&#x27;s Total Peace Policy Reduce Violence? Panel Data Evaluation">
+<meta property="og:description" content="MA thesis at CEU: an impact evaluation of Colombia&#x27;s Paz Total policy in Buenaventura, Arauca and Tumaco, using police and ACLED data, two-way fixed effects and negative binomial models.">
+<meta property="og:url" content="https://danielnavarro.work/work/paz-total-colombia/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Did Colombia's Total Peace policy reduce violence?", "description": "MA thesis at CEU: an impact evaluation of Colombia's Paz Total policy in Buenaventura, Arauca and Tumaco, using police and ACLED data, two-way fixed effects and negative binomial models.", "about": ["Impact Evaluation", "Causal Inference", "Colombia", "Peace Negotiations", "Panel Data"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/paz-total-colombia/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · MA thesis, Central European University · 2026</p>
+  <h1>Did Colombia's Total Peace policy reduce violence?</h1>
+  <p class="lede">From 2022, Gustavo Petro's government opened talks with armed groups across Colombia under the Paz Total (Total Peace) policy. My MA thesis at CEU looks at three places where talks actually started, Buenaventura, Arauca and Tumaco, and asks what happened to violence once they did. In this data, violence went up.</p>
+
+  <dl class="facts">
+    <div><dt>Degree</dt><dd>MA in Public Policy, CEU</dd></div>
+    <div><dt>Data</dt><dd>Police + ACLED, 2018 to 2026</dd></div>
+    <div><dt>Methods</dt><dd>TWFE · negative binomial</dd></div>
+  </dl>
+
+  <h2>The research question</h2>
+  <p>Total Peace runs several negotiations at once: with the ELN guerrilla, with FARC dissident factions and with urban gangs. The thesis tests whether the start of talks in a place is associated with a change in monthly violence, and in which direction. I looked at five outcomes: homicide, extortion and terrorism from the Colombian National Police, and attacks on civilians and political violence from ACLED.</p>
+
+  <h2>Three cases, one monthly panel</h2>
+  <ul class="list">
+    <li><b>Buenaventura</b> (the municipality): talks with the Shottas and Espartanos gangs, from 2022.</li>
+    <li><b>Arauca</b> (the whole department): talks with the ELN's Frente Domingo Laín, from 2022 to September 2024.</li>
+    <li><b>Tumaco</b> (a regional cluster): talks with Segunda Marquetalia, from June 2024.</li>
+  </ul>
+  <p>The panel runs monthly from January 2018 to March 2026: 297 case-months, or 1,263 rows when each outcome gets its own row. An average month has 31 recorded events, with a peak of 137. Arauca is the most violent case (52 events a month on average), then Buenaventura (26) and Tumaco (15).</p>
+
+  <h2>Method: two-way fixed effects with a clash control</h2>
+  <p>Case fixed effects absorb the stable differences between places, so Arauca being more violent than Tumaco does not drive the result. Month fixed effects absorb national shocks that hit all three at once. Talks rarely open in quiet places, so the model also includes a dummy for months with active armed clashes, interacted with the treatment.</p>
+  <p>I built the estimates up step by step: pooled OLS, then case fixed effects, then the full two-way fixed effects model, then one model per outcome. The counts are overdispersed (dispersion parameter 1.95), and BIC prefers a negative binomial over a Poisson model (7,945 against 10,138), so I report both the linear and the count models, with case-clustered standard errors. Everything is in R with <code>fixest</code> and <code>modelsummary</code>; the maps are made in QGIS.</p>
+
+  <h2>Results</h2>
+  <ul class="list">
+    <li>In months without clashes, the start of talks is associated with about <b>3.2 more violent events per month</b> (SE 1.07).</li>
+    <li>Active clashes add 5.3 events a month. The interaction term is −3.4, so where groups are already fighting, talks add almost nothing on top.</li>
+    <li>The negative binomial model gives a rate ratio of <b>1.94</b>: roughly a doubling of monthly violence in places without active disputes.</li>
+    <li>Broken down by outcome, <b>political violence</b> is the only category with a significant treatment effect at the 5% level.</li>
+  </ul>
+  <p>With three cases and staggered start dates, I read these as associations, which is how the thesis states them. They still point the same way across specifications: in these three places, Total Peace coincided with more violence, and active clashes were the strongest driver.</p>
+
+  <h2>Code, poster and slides</h2>
+  <p>The R pipeline builds the panel, runs the models and exports every table, so the thesis can be reproduced from the raw downloads: <a href="https://github.com/Daniel-Navarro-M/-I-m-Paz-Total_replication" rel="noopener" target="_blank">(I'm)Paz Total replication on GitHub</a>. I also presented the work as a poster and as a talk, "From War to Talks".</p>
+  <p class="callout">Related: <a href="/work/blackpolis-cali/">a census analysis of racial inequality in Cali</a>, and <a href="/work/ocha-rag/">my work on AI situation analysis at UN OCHA</a>, which covered the 2026 Colombia earthquake response.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/world-bank-timss-balkans/">Next: Parental investment and learning gaps in the Western Balkans →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

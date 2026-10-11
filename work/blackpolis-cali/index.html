@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapping Structural Racism in Cali with Census Data and Clustering | Daniel Navarro</title>
+<meta name="description" content="Policy brief on racial inequality in Cali, Colombia: 2018 census data for 328 neighbourhoods, regression and clustering link the Afro-Colombian population share to unemployment and education gaps.">
+<link rel="canonical" href="https://danielnavarro.work/work/blackpolis-cali/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mapping Structural Racism in Cali with Census Data and Clustering">
+<meta property="og:description" content="Policy brief on racial inequality in Cali, Colombia: 2018 census data for 328 neighbourhoods, regression and clustering link the Afro-Colombian population share to unemployment and education gaps.">
+<meta property="og:url" content="https://danielnavarro.work/work/blackpolis-cali/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Blackpolis: mapping structural racism in Cali with census data", "description": "Policy brief on racial inequality in Cali, Colombia: 2018 census data for 328 neighbourhoods, regression and clustering link the Afro-Colombian population share to unemployment and education gaps.", "about": ["Policy Analysis", "Racial Inequality", "Cali", "Clustering", "Census Data"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/blackpolis-cali/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · Policy brief · 2025</p>
+  <h1>Blackpolis: mapping structural racism in Cali with census data</h1>
+  <p class="lede">A policy brief addressed to Cali's equity officials. Using the 2018 census for 328 neighbourhoods, I measured how the share of Afro-Colombian residents relates to unemployment, schooling and illiteracy, then grouped neighbourhoods so that a programme could be targeted where the gaps are largest.</p>
+
+  <dl class="facts">
+    <div><dt>Data</dt><dd>DANE 2018 census · CaliEnDatos</dd></div>
+    <div><dt>Unit</dt><dd>328 neighbourhoods</dd></div>
+    <div><dt>Methods</dt><dd>OLS · clustering · QGIS</dd></div>
+  </dl>
+
+  <h2>What the census shows</h2>
+  <p>For each neighbourhood I took the share of residents who identify as Black, Afro-Colombian, Raizal or Palenquero (NARP) and regressed four outcomes on it. Every slope is significant at p &lt; 0.001:</p>
+  <ul class="list">
+    <li><b>Unemployment:</b> +0.30 per point of Afro share (R² 0.34).</li>
+    <li><b>School attendance, ages 5 to 21:</b> −0.55 (R² 0.15).</li>
+    <li><b>Higher-education attendance:</b> −1.09 (R² 0.33).</li>
+    <li><b>Illiteracy:</b> +0.11 (R² 0.35).</li>
+  </ul>
+
+  <h2>Three kinds of neighbourhood</h2>
+  <p>Clustering split the city into three groups. In the most disadvantaged one, 21% of residents are Afro-Colombian, unemployment is 24% and 13% attend higher education. In the most advantaged, 6% are Afro-Colombian and 54.7% attend higher education. The maps, made in QGIS, show the clusters as contiguous areas of the city.</p>
+
+  <h2>Recommendation</h2>
+  <p>I scored three options against the same criteria: the status quo (18 points), an education programme (21) and a labour programme (23). The brief recommends labour-market entry and personal-finance programmes, targeted at the neighbourhoods in the disadvantaged cluster.</p>
+  <p>The analysis is in Python (<code>pandas</code>, <code>scikit-learn</code>, <code>plotly</code>): <a href="https://github.com/Daniel-Navarro-M/blackpolis_replication" rel="noopener" target="_blank">blackpolis_replication on GitHub</a>.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/cali-electoral-clustering/">Next: K-means on Cali's metropolitan vote →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

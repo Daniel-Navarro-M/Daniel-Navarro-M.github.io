@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Company Intelligence with a Knowledge Graph and RAG (Neo4j, LLMs) | Daniel Navarro</title>
+<meta name="description" content="A knowledge graph and RAG system that maps a manufacturer&#x27;s customers, suppliers and competitors from SAM.gov, SEC EDGAR, news and company websites, with cited reports and evidence-gated LLM extraction.">
+<link rel="canonical" href="https://danielnavarro.work/work/knowledge-graph-company-intelligence/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Company Intelligence with a Knowledge Graph and RAG (Neo4j, LLMs)">
+<meta property="og:description" content="A knowledge graph and RAG system that maps a manufacturer&#x27;s customers, suppliers and competitors from SAM.gov, SEC EDGAR, news and company websites, with cited reports and evidence-gated LLM extraction.">
+<meta property="og:url" content="https://danielnavarro.work/work/knowledge-graph-company-intelligence/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Company intelligence with a knowledge graph and RAG", "description": "A knowledge graph and RAG system that maps a manufacturer's customers, suppliers and competitors from SAM.gov, SEC EDGAR, news and company websites, with cited reports and evidence-gated LLM extraction.", "about": ["Knowledge Graph", "Retrieval-Augmented Generation", "Neo4j", "Business Intelligence", "LLM"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/knowledge-graph-company-intelligence/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · AI engineering, Instrumental Partners · 2026</p>
+  <h1>Company intelligence with a knowledge graph and RAG</h1>
+  <p class="lede">A US aerospace and defense electronics manufacturer kept hundreds of customers, vendors and competitors in spreadsheets, with no picture of how they connect: who competes with whom, who bought whom, which names are the same company. I built a knowledge graph and a RAG layer that answer those questions with sources attached.</p>
+
+  <dl class="facts">
+    <div><dt>Context</dt><dd>Instrumental Partners · client confidential</dd></div>
+    <div><dt>Graph</dt><dd>~17k nodes · ~22k relationships</dd></div>
+    <div><dt>Stack</dt><dd>Python · Neo4j · FastAPI · LLMs</dd></div>
+  </dl>
+
+  <h2>Sources</h2>
+  <p>The graph starts from the client's own lists (238 customers, 606 vendors and 83 competitors) and grows from public data: SAM.gov firmographics and the SAM Entity API, SEC EDGAR filings, Apollo.io, news from RSS feeds and GDELT, and company websites crawled with <code>trafilatura</code>.</p>
+
+  <h2>Extraction you can audit</h2>
+  <p>An LLM reads each source and proposes typed relationships such as supplies, acquired or competes with. A relationship only enters the graph if the model quotes the sentence that supports it and that quote appears verbatim in the source. Model output is forced into a JSON schema, so free text never gets stored as a fact.</p>
+  <p>Company names are the hard part. Resolution goes roster first: known alias, then slug, then a fuzzy match of 95 or above, then a closed-set LLM choice among real candidates. When none of those works, the system declines to link. Rules then infer second-tier suppliers, competitors that share customers, and parent-company rollups. Inferred edges are drawn dashed and carry the rule that created them plus a confidence score, so an inference is never mistaken for a sourced fact.</p>
+
+  <h2>Reports and Q&amp;A</h2>
+  <p>Report sections are defined in YAML and can draw on the graph, on vector search, or on both. The output is a cited Markdown or Word report per company, and contacts export straight to the CRM. Embeddings live in a Neo4j HNSW index.</p>
+
+  <h2>Running it cheaply</h2>
+  <p>Development ran on a local Gemma model through Docker Model Runner on an 8 GB laptop GPU. Production runs on a small AWS EC2 instance with Neo4j AuraDB, GitHub Actions and a login gate, and calls <code>gpt-4.1-mini</code> for extraction. The deployed graph holds about 10,100 companies and 6,800 sources, roughly 17,000 nodes and 21,700 relationships. The full development graph, with every part each supplier is approved for, reached 855,000 nodes and a million edges. That is about four times what the hosted tier allows, so production keeps the company layer only.</p>
+
+  <h2>Known limits</h2>
+  <p>The small local model sometimes mistakes product names for companies, and long pages are cut off at extraction because there is no chunking yet. Both are documented, and the evidence check keeps most of these errors out of the graph.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/purchase-order-clause-reviewer/">Next: AI review of quality clauses in purchase orders →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

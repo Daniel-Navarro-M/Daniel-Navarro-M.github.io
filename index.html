@@ -45,7 +45,7 @@
   "url": "https://danielnavarro.work/",
   "name": "Daniel Navarro | Data Scientist & AI Engineer in Geneva",
   "inLanguage": "en",
-  "dateModified": "2026-10-04T12:00:00+02:00",
+  "dateModified": "2026-10-11T12:00:00+02:00",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://danielnavarro.work/#person",
@@ -145,7 +145,7 @@
 
 <section class="stats" aria-label="Key figures">
   <div class="wrap">
-    <div class="stat reveal"><b>1M+</b><span>procurement contracts structured into a RAG and graph knowledge base</span></div>
+    <div class="stat reveal"><b>1.1M</b><span>supplier-part records from public procurement, structured into a RAG and graph knowledge base</span></div>
     <div class="stat reveal"><b>25%</b><span>improvement over baseline in geospatial ML for Parkinson's research</span></div>
     <div class="stat reveal"><b>9,300</b><span>EU cooperation files referenced, status predicted at ~90% accuracy</span></div>
     <div class="stat reveal"><b>5</b><span>countries worked in: Switzerland, Austria, Colombia, El Salvador, Dominican Republic</span></div>
@@ -216,8 +216,43 @@
         <h3>Procurement intelligence platform with RAG and ML</h3>
         <p>End-to-end system that scrapes, cleans and structures public procurement data at scale, then feeds a RAG and graph knowledge base for competitor reporting, BI dashboards and pricing and bidding models inside a custom CRM, for manufacturing and security-sector clients.</p>
         <ul class="tags"><li>Python</li><li>Scraping</li><li>ETL</li><li>SQLite</li><li>Preset</li><li>ML</li><li>Apollo API</li></ul>
-        <p class="outcome"><b>Scale:</b> 1M+ contracts and 8k+ competitors structured.</p>
+        <p class="outcome"><b>Scale:</b> 1.1M supplier-part records and 95k contract awards structured.</p>
         <a class="more" href="/work/procurement-intelligence/">Read the case study →</a>
+      </article>
+      <article class="case reveal" data-tags="ai data">
+        <div class="kind"><span>AI engineering · 2026</span><b>Instrumental Partners</b></div>
+        <h3>Knowledge-graph company intelligence</h3>
+        <p>A Neo4j knowledge graph of a manufacturer's customers, suppliers and competitors, built from SAM.gov, SEC EDGAR, news and websites. An LLM extracts relationships only with a verbatim quote as evidence; reports come out cited.</p>
+        <ul class="tags"><li>Neo4j</li><li>RAG</li><li>LLM</li><li>FastAPI</li></ul>
+        <a class="more" href="/work/knowledge-graph-company-intelligence/">Read the case study →</a>
+      </article>
+      <article class="case reveal" data-tags="ai">
+        <div class="kind"><span>Document AI · 2026</span><b>Instrumental Partners</b></div>
+        <h3>AI review of purchase-order quality clauses</h3>
+        <p>OCR and a vision model read scanned defense purchase orders, extract quality codes with word-for-word evidence and pre-fill the quality checklist.</p>
+        <ul class="tags"><li>OCR</li><li>GPT-4o</li><li>Python</li><li>Evaluation</li></ul>
+        <a class="more" href="/work/purchase-order-clause-reviewer/">Read the case study →</a>
+      </article>
+      <article class="case reveal" data-tags="ai data">
+        <div class="kind"><span>Machine learning · 2025–26</span><b>Instrumental Partners</b></div>
+        <h3>Bid-price prediction for defense contracts</h3>
+        <p>A cascade of XGBoost classifiers and a neural network predicts the next winning unit price for spare-parts solicitations; 7.7% median error against about 10% for the last price.</p>
+        <ul class="tags"><li>XGBoost</li><li>MLflow</li><li>PostgreSQL</li></ul>
+        <a class="more" href="/work/bid-price-prediction/">Read the case study →</a>
+      </article>
+      <article class="case reveal" data-tags="data">
+        <div class="kind"><span>Business intelligence · 2026</span><b>Instrumental Partners</b></div>
+        <h3>ERP to dashboards for a manufacturer</h3>
+        <p>SQL views on a Made2Manage ERP feeding Preset dashboards and a monthly management report on margins, on-time delivery and backlog.</p>
+        <ul class="tags"><li>SQL</li><li>ERP</li><li>Preset</li></ul>
+        <a class="more" href="/work/erp-manufacturing-dashboards/">Read the case study →</a>
+      </article>
+      <article class="case reveal" data-tags="data geo">
+        <div class="kind"><span>Market data · 2025</span><b>Instrumental Partners</b></div>
+        <h3>US aviation repair station market map</h3>
+        <p>5,027 FAA Part 145 certificates deduplicated into 3,663 companies, enriched and geocoded for a sales team.</p>
+        <ul class="tags"><li>Entity resolution</li><li>Apollo API</li><li>GIS</li></ul>
+        <a class="more" href="/work/aviation-repair-station-market-map/">Read the case study →</a>
       </article>
       <article class="case wide reveal" data-tags="policy">
         <div class="kind"><span>MA thesis · 2026</span><b>CEU</b></div>
@@ -225,7 +260,7 @@
         <p>A monthly panel built from National Police records and ACLED events for Buenaventura, Arauca and Tumaco, estimated with two-way fixed effects and event studies, plus robustness checks and QGIS maps.</p>
         <ul class="tags"><li>Causal inference</li><li>TWFE</li><li>Event study</li><li>R</li><li>ACLED</li></ul>
         <p class="outcome"><b>Finding:</b> the onset of peace talks is linked to more monthly violence, led by political violence.</p>
-        <a class="more" href="https://github.com/Daniel-Navarro-M/-I-m-Paz-Total_replication" rel="noopener" target="_blank">Code on GitHub →</a>
+        <a class="more" href="/work/paz-total-colombia/">Read the case study →</a>
       </article>
       <article class="case wide reveal" data-tags="policy data">
         <div class="kind"><span>Procurement analytics · 2025</span><b>CEU</b></div>
@@ -233,20 +268,21 @@
         <p>With Paula Biša: a contract-level Corruption Risk Index from red-flag indicators validated by logistic regression, comparing the Latvian implementer of Rail Baltica with the rest of the national market on TED data, 2018 to 2023.</p>
         <ul class="tags"><li>Red flags</li><li>Logistic regression</li><li>TED data</li><li>R</li></ul>
         <p class="outcome"><b>Finding:</b> no sign of unusually high risk overall; the implementer sits within, and partly below, market norms.</p>
-        <a class="more" href="https://github.com/Daniel-Navarro-M/rail_baltika_corruption_replication" rel="noopener" target="_blank">Code &amp; deck on GitHub →</a>
+        <a class="more" href="/work/rail-baltica-corruption-risk/">Read the case study →</a>
       </article>
       <article class="case reveal" data-tags="ai policy">
         <div class="kind"><span>NLP · 2026</span><b>CEU</b></div>
         <h3>Migration discourse in the Dominican Republic</h3>
         <p>Seeded and unseeded LDA, DBSCAN and a Spanish transformer sentiment model on 43 presidential speeches and ~8,800 Reddit sentences. Builds on earlier NLP work at the OAS in Santo Domingo.</p>
         <p class="outcome"><b>10.6 pp</b> more negative affect in migration sentences on Reddit, 4.6 pp in speeches.</p>
-        <a class="more" href="https://github.com/Daniel-Navarro-M/dialectical_identity_in_RD" rel="noopener" target="_blank">Code on GitHub →</a>
+        <a class="more" href="/work/dominican-migration-nlp/">Read the case study →</a>
       </article>
       <article class="case reveal" data-tags="policy data">
         <div class="kind"><span>Research · 2025–26</span><b>World Bank / CEU</b></div>
         <h3>Educational inequality across the Balkans &amp; Europe</h3>
         <p>Led the CEU workstream: cleaned and merged international TIMSS data and ran survey-weighted regression and comparative analysis of socio-economic and parental-investment gaps.</p>
         <ul class="tags"><li>TIMSS</li><li>Survey weights</li><li>Regression</li></ul>
+        <a class="more" href="/work/world-bank-timss-balkans/">Read the case study →</a>
       </article>
       <article class="case reveal" data-tags="data geo">
         <div class="kind"><span>Forecasting · 2024–25</span><b>Independent</b></div>
@@ -259,18 +295,20 @@
         <h3>Geospatial ML for Parkinson's disease</h3>
         <p>Machine learning and deep learning linking geographic and environmental attributes to disease progression, presented to doctors, engineers and designers.</p>
         <p class="outcome"><b>25%</b> improvement over baseline findings.</p>
+        <a class="more" href="/work/parkinsons-geospatial-ml/">Read the case study →</a>
       </article>
       <article class="case reveal" data-tags="policy geo">
         <div class="kind"><span>Publication · 2025</span><b>Revista Geographia</b></div>
         <h3>Metropolitan electoral behaviour in Cali</h3>
         <p>k-means clustering shows how voting patterns cross municipal boundaries. Peer-reviewed article with Milanese.</p>
         <ul class="tags"><li>Clustering</li><li>GIS</li><li>Elections</li></ul>
+        <a class="more" href="/work/cali-electoral-clustering/">Read the case study →</a>
       </article>
       <article class="case reveal" data-tags="policy geo">
         <div class="kind"><span>Policy brief</span><b>Cali</b></div>
         <h3>Blackpolis: racial inequality in Cali</h3>
         <p>Census and CaliEnDatos data, regression and neighbourhood clustering turned into a policy brief with three costed options on employment and education gaps for Afro-Colombian communities.</p>
-        <a class="more" href="https://github.com/Daniel-Navarro-M/blackpolis_replication" rel="noopener" target="_blank">Brief on GitHub →</a>
+        <a class="more" href="/work/blackpolis-cali/">Read the case study →</a>
       </article>
     </div>
     <p class="note">◆ Code samples and notebooks live on <a href="https://github.com/Daniel-Navarro-M" rel="me noopener" target="_blank">GitHub</a>.</p>
@@ -284,7 +322,7 @@
       <p>From research labs in Cali to multilateral institutions and private-sector clients, often working in parallel with full-time study.</p>
     </div>
     <ol class="timeline">
-      <li class="reveal"><time>Jul 2025 – present</time><div><h3>Data Engineer &amp; BI Consultant</h3><span class="org"><b>Instrumental Partners LLC</b> · Geneva, remote</span></div><p>RAG and graph knowledge base, scraping and ETL over 1M+ federal procurement contracts, BI dashboards, pricing and bidding ML and Apollo API enrichment in a custom CRM. Data architecture from ERDs to user flows.</p></li>
+      <li class="reveal"><time>Jul 2025 – present</time><div><h3>Data Engineer &amp; BI Consultant</h3><span class="org"><b>Instrumental Partners LLC</b> · Geneva, remote</span></div><p>RAG and graph knowledge base, scraping and ETL over 1.1M federal supplier-part records and 95k contract awards, BI dashboards, pricing and bidding ML and Apollo API enrichment in a custom CRM. Data architecture from ERDs to user flows.</p></li>
       <li class="reveal"><time>Jun 2026 – present</time><div><h3>Information Management Intern</h3><span class="org"><b>UN OCHA</b> · Geneva</span></div><p>Built an automated, graph-grounded AI reporting system with a Docker UI for Azure; trained country offices on RAG and LLM reporting; supported needs analysis and mapping of affected populations during earthquake responses.</p></li>
       <li class="reveal"><time>Sep 2025 – May 2026</time><div><h3>Researcher, Educational Inequality</h3><span class="org"><b>World Bank / CEU</b> · Vienna</span></div><p>Led the CEU research workstream, liaised with World Bank counterparts and ran regression-based comparative analysis on TIMSS data.</p></li>
       <li class="reveal"><time>Jul 2024 – Jul 2025</time><div><h3>Independent Consultant, Data Science &amp; GIS</h3><span class="org"><b>Independent</b> · Bogotá</span></div><p>Dashboards for data storytelling, satellite-based forecasting models and GeoJSON datasets for radio coverage, environmental monitoring and infrastructure planning.</p></li>

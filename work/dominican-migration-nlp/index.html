@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Haitian Migration in Dominican Public Debate: NLP on Presidential Speeches and Reddit | Daniel Navarro</title>
+<meta name="description" content="Text analysis of 43 Dominican presidential speeches and 8,800 Reddit sentences with seeded LDA, DBSCAN and a Spanish transformer sentiment model (RoBERTuito). Migration talk is measurably more negative.">
+<link rel="canonical" href="https://danielnavarro.work/work/dominican-migration-nlp/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Haitian Migration in Dominican Public Debate: NLP on Presidential Speeches and Reddit">
+<meta property="og:description" content="Text analysis of 43 Dominican presidential speeches and 8,800 Reddit sentences with seeded LDA, DBSCAN and a Spanish transformer sentiment model (RoBERTuito). Migration talk is measurably more negative.">
+<meta property="og:url" content="https://danielnavarro.work/work/dominican-migration-nlp/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How Dominicans talk about Haitian migration: an NLP study of speeches and Reddit", "description": "Text analysis of 43 Dominican presidential speeches and 8,800 Reddit sentences with seeded LDA, DBSCAN and a Spanish transformer sentiment model (RoBERTuito). Migration talk is measurably more negative.", "about": ["Natural Language Processing", "Topic Modeling", "Sentiment Analysis", "Migration", "Dominican Republic"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/dominican-migration-nlp/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · NLP, Central European University · 2026</p>
+  <h1>How Dominicans talk about Haitian migration: an NLP study of speeches and Reddit</h1>
+  <p class="lede">In 2023, as an intern at the Organization of American States office in Santo Domingo, I wrote a report on Dominican identity and migration. At CEU I rebuilt it as a text-analysis project: 43 presidential speeches and about 8,800 Reddit sentences, read with topic models, clustering and a Spanish transformer for sentiment.</p>
+
+  <dl class="facts">
+    <div><dt>Course</dt><dd>Text Analysis &amp; NLP, CEU</dd></div>
+    <div><dt>Corpus</dt><dd>6,804 speech + ~8,800 Reddit sentences</dd></div>
+    <div><dt>Methods</dt><dd>Seeded LDA · DBSCAN · RoBERTuito</dd></div>
+  </dl>
+
+  <h2>The question</h2>
+  <p>How is Haitian migration framed in Dominican public debate, from the presidency and from ordinary users online? I tested two hypotheses: sentences that use migration vocabulary carry more negative sentiment than other sentences, and the Reddit discussion clusters around security and negative framing.</p>
+
+  <h2>Data</h2>
+  <ul class="list">
+    <li><b>Presidential speeches:</b> 43 speeches by Luis Abinader, scraped from presidencia.gob.do, August 2020 to February 2026. That gives 6,804 sentences.</li>
+    <li><b>Reddit:</b> about 8,800 sentences from r/Dominicanos, pre-filtered for migration terms.</li>
+    <li><b>Context:</b> official migration statistics for 2018 to 2023, and the ENI 2017 immigrant survey, which counted 570,933 foreign-born residents, 5.6% of the population.</li>
+  </ul>
+
+  <h2>Method</h2>
+  <p>The pipeline is in R with <code>quanteda</code>. Frequency trimming usually removes rare words, and in migration debates some of the most loaded terms are rare, so I kept a whitelist of about 40 of them. Then:</p>
+  <ul class="list">
+    <li><b>Seeded LDA</b> with six topics, five of them seeded from theory, and an unseeded LDA as a validation check.</li>
+    <li><b>DBSCAN</b> on a TF-IDF matrix reduced with SVD (minPts = 30), to find clusters without fixing their number in advance.</li>
+    <li><b>Sentiment</b> from RoBERTuito (<code>pysentimiento</code>), a Spanish transformer trained on social media, called from R through <code>reticulate</code>.</li>
+  </ul>
+
+  <h2>Results</h2>
+  <p>The two sources have very different overall tone. Speech sentences are 40.0% positive, 46.8% neutral and 13.2% negative. Reddit sentences are 7.4% positive, 44.5% neutral and 48.1% negative.</p>
+  <ul class="list">
+    <li>In speeches, the 251 migration sentences have a mean negativity of 0.432 against 0.386 for the rest: <b>4.6 points</b> more negative.</li>
+    <li>On Reddit, the 1,518 migration sentences score 0.763 against 0.657: <b>10.6 points</b> more negative.</li>
+    <li>Reddit users write words starting with <i>hait-</i> 25.3 times per 1,000 tokens. The presidency does so 1.5 times.</li>
+    <li>The most negative terms are <i>indocumentado</i> (0.81) and <i>deportación</i> (0.78). The Haiti-migration topic is the most negative topic (0.75).</li>
+    <li>Haiti vocabulary shows up in four of the six unseeded topics, and in at least four of the six DBSCAN clusters.</li>
+  </ul>
+  <p>Both hypotheses hold. Migration language is more negative than other language in both corpora, and Haiti dominates the online conversation far more than it does the president's speeches.</p>
+
+  <h2>Code</h2>
+  <p>Scraping, cleaning, topic models and sentiment scoring are on GitHub: <a href="https://github.com/Daniel-Navarro-M/dialectical_identity_in_RD" rel="noopener" target="_blank">dialectical_identity_in_RD</a>.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/rail-baltica-corruption-risk/">Next: Corruption-risk analytics for Rail Baltica →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

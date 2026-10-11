@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From ERP to Dashboards: Cost Accounting and Operations BI for a Manufacturer | Daniel Navarro</title>
+<meta name="description" content="SQL views on a Made2Manage ERP feeding Preset dashboards and monthly reports on margins, on-time delivery and backlog for an electronics manufacturer and its machining subsidiary.">
+<link rel="canonical" href="https://danielnavarro.work/work/erp-manufacturing-dashboards/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="From ERP to Dashboards: Cost Accounting and Operations BI for a Manufacturer">
+<meta property="og:description" content="SQL views on a Made2Manage ERP feeding Preset dashboards and monthly reports on margins, on-time delivery and backlog for an electronics manufacturer and its machining subsidiary.">
+<meta property="og:url" content="https://danielnavarro.work/work/erp-manufacturing-dashboards/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "From ERP to dashboards: cost and operations reporting for a manufacturer", "description": "SQL views on a Made2Manage ERP feeding Preset dashboards and monthly reports on margins, on-time delivery and backlog for an electronics manufacturer and its machining subsidiary.", "about": ["Business Intelligence", "SQL", "ERP", "Manufacturing Analytics", "Preset"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/erp-manufacturing-dashboards/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · Business intelligence, Instrumental Partners · 2026</p>
+  <h1>From ERP to dashboards: cost and operations reporting for a manufacturer</h1>
+  <p class="lede">A mid-size US electronics manufacturer and its machining subsidiary run on a Made2Manage ERP. The data to answer "which jobs make money?" and "are we shipping on time?" was in there, but nobody could get it out. I built the SQL layer, the dashboards and a monthly report.</p>
+
+  <dl class="facts">
+    <div><dt>Context</dt><dd>Instrumental Partners · client confidential</dd></div>
+    <div><dt>Source</dt><dd>Made2Manage ERP on SQL Server</dd></div>
+    <div><dt>Output</dt><dd>Preset dashboards · monthly reports</dd></div>
+  </dl>
+
+  <h2>Keep the base tables at line level</h2>
+  <p>The SQL views stay at the most detailed grain the ERP has: one row per invoice line with its job cost, per payable, per labour entry. Aggregation happens in the charts, so the same view answers margin by customer, by part and by month without a new query for each question.</p>
+
+  <h2>Fixing the data the ERP gives you</h2>
+  <p>Years of manual entry leave marks, and the views handle them openly:</p>
+  <ul class="list">
+    <li>Weekly overtime above 6,000 minutes was almost certainly recorded in seconds, so it gets converted.</li>
+    <li>Labour hours that are 60, 600 or 3,600 times the estimate are unit errors and get rescaled.</li>
+    <li>A missing delivery date stays missing. Filling it with today's date would quietly change the on-time delivery figure.</li>
+  </ul>
+  <p>Each rule is written down in a data dictionary, a glossary and a change log, so finance can see why a number moved.</p>
+
+  <h2>From dashboards to decisions</h2>
+  <p>Preset dashboards track margins, on-time delivery and backlog. Each month I write a short narrative report for management on what changed, why, and what to look at next. The numbers belong to the client and stay private.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/aviation-repair-station-market-map/">Next: Market map of US aviation repair stations →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

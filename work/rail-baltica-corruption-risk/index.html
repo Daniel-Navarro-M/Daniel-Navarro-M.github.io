@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corruption Risk in Rail Baltica Procurement: Red Flags and a Risk Index | Daniel Navarro</title>
+<meta name="description" content="Contract-level corruption-risk analysis of Rail Baltica procurement in Latvia: five red-flag indicators validated with regression, combined into a Corruption Risk Index on 2018 to 2023 tender data.">
+<link rel="canonical" href="https://danielnavarro.work/work/rail-baltica-corruption-risk/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Corruption Risk in Rail Baltica Procurement: Red Flags and a Risk Index">
+<meta property="og:description" content="Contract-level corruption-risk analysis of Rail Baltica procurement in Latvia: five red-flag indicators validated with regression, combined into a Corruption Risk Index on 2018 to 2023 tender data.">
+<meta property="og:url" content="https://danielnavarro.work/work/rail-baltica-corruption-risk/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Measuring corruption risk in Rail Baltica procurement", "description": "Contract-level corruption-risk analysis of Rail Baltica procurement in Latvia: five red-flag indicators validated with regression, combined into a Corruption Risk Index on 2018 to 2023 tender data.", "about": ["Public Procurement", "Corruption Risk", "Red Flags", "Rail Baltica", "Latvia"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/rail-baltica-corruption-risk/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · Procurement analytics, CEU · 2025</p>
+  <h1>Measuring corruption risk in Rail Baltica procurement</h1>
+  <p class="lede">Rail Baltica's projected cost rose from €5.8 billion to €15.3 billion, and its completion date moved from 2025 to 2030. With Paula Biša, for Mihály Fazekas's course on procurement corruption at CEU, I checked whether the tenders of EDZL, the Latvian implementer, show the warning signs that usually come with corruption risk.</p>
+
+  <dl class="facts">
+    <div><dt>Course</dt><dd>Public Procurement Corruption &amp; Analytics</dd></div>
+    <div><dt>Data</dt><dd>77 tenders · 675 contracts · €1.8bn</dd></div>
+    <div><dt>Method</dt><dd>Red flags · risk index</dd></div>
+  </dl>
+
+  <h2>Data</h2>
+  <p>Latvian public procurement records for 2018 to 2023. EDZL ran 77 tenders that produced 675 contracts worth €1.8 billion. We compared them with the rest of the Latvian market over the same years.</p>
+
+  <h2>Five red flags, tested before use</h2>
+  <p>We used five red-flag indicators from the procurement-integrity literature: procedure type, single bidding, length of the submission period, length of the decision period, and the share of a buyer's spending that goes to one supplier. A flag only belongs in an index if it predicts something, so we validated each one with logit and OLS models of single bidding. The models control for contract value, buyer type, supply type, year, market (CPV division) and buyer location. The flags that held up were combined into a contract-level Corruption Risk Index, following the Government Transparency Institute approach. All of this is in R (<code>tidyverse</code>, <code>data.table</code>, <code>estimatr</code>, <code>sandwich</code>).</p>
+
+  <h2>Findings</h2>
+  <ul class="list">
+    <li>The data shows no sign of unusually high risk at EDZL overall. Its contracts cluster near zero on the index, mostly below the national level.</li>
+    <li>Topographic services stand out, with some signs of supplier preference and over-budgeting. Two surveying firms together won 315 contracts worth about €480 million.</li>
+    <li>The largest supplier by value received €474 million across just three contracts, which is what you expect for heavy construction lots.</li>
+  </ul>
+  <p>Red flags measure risk. They do not prove wrongdoing, and the topographic contracts are a place to look more closely, not a finding of corruption.</p>
+
+  <h2>Code and slides</h2>
+  <p><a href="https://github.com/Daniel-Navarro-M/rail_baltika_corruption_replication" rel="noopener" target="_blank">rail_baltika_corruption_replication on GitHub</a> has the cleaning, validation models, index and presentation.</p>
+  <p class="callout">I now build procurement data systems for clients: see <a href="/work/procurement-intelligence/">procurement intelligence with RAG and ML</a>.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/blackpolis-cali/">Next: Mapping structural racism in Cali →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

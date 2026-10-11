@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parental Investment and Learning Gaps in the Western Balkans: TIMSS Analysis for the World Bank | Daniel Navarro</title>
+<meta name="description" content="CEU Policy Lab for the World Bank: survey-weighted regression and factor analysis on TIMSS Grade 4 data to compare socio-economic learning gaps in the Western Balkans and Europe.">
+<link rel="canonical" href="https://danielnavarro.work/work/world-bank-timss-balkans/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Parental Investment and Learning Gaps in the Western Balkans: TIMSS Analysis for the World Bank">
+<meta property="og:description" content="CEU Policy Lab for the World Bank: survey-weighted regression and factor analysis on TIMSS Grade 4 data to compare socio-economic learning gaps in the Western Balkans and Europe.">
+<meta property="og:url" content="https://danielnavarro.work/work/world-bank-timss-balkans/">
+<meta property="og:image" content="https://danielnavarro.work/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Parental investment and learning gaps in the Western Balkans", "description": "CEU Policy Lab for the World Bank: survey-weighted regression and factor analysis on TIMSS Grade 4 data to compare socio-economic learning gaps in the Western Balkans and Europe.", "about": ["Education Economics", "TIMSS", "Survey Statistics", "World Bank", "Western Balkans"], "author": {"@type": "Person", "@id": "https://danielnavarro.work/#person", "name": "Daniel Navarro", "url": "https://danielnavarro.work/"}, "datePublished": "2026-10-11T12:00:00+02:00", "dateModified": "2026-10-11T12:00:00+02:00", "inLanguage": "en", "image": "https://danielnavarro.work/assets/img/og.png", "mainEntityOfPage": "https://danielnavarro.work/work/world-bank-timss-balkans/"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>Daniel Navarro</a>
+  <nav aria-label="Main"><ul><li><a href="/#work">Work</a></li><li><a href="/#experience">Experience</a></li><li><a href="/cv/">CV</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+  <div class="nav-tools"><button class="chip-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div>
+</div></header>
+
+<main id="main" class="article"><div class="wrap">
+  <a class="back" href="/#work">← All work</a>
+  <p class="eyebrow">Case study · World Bank Policy Lab, CEU · 2025 to 2026 · Unpublished</p>
+  <h1>Parental investment and learning gaps in the Western Balkans</h1>
+  <p class="lede">The World Bank's education team for the Western Balkans asked a group of four CEU students a question: how much does family background shape a child's math score in fourth grade, and does the gap look different in the Balkans than in the rest of Europe? I led the data work.</p>
+
+  <dl class="facts">
+    <div><dt>Client</dt><dd>World Bank, Vienna office</dd></div>
+    <div><dt>Data</dt><dd>TIMSS Grade 4 · ~90k students a wave</dd></div>
+    <div><dt>Status</dt><dd>Unpublished, internal paper</dd></div>
+  </dl>
+
+  <h2>The question</h2>
+  <p>The focus countries were Albania, Bosnia and Herzegovina, Kosovo, Montenegro, North Macedonia and Serbia, compared with the rest of Europe. We looked at two things: the score gap between children of more and less educated parents, and parental investment, meaning the early learning activities parents report doing with their child at home before school.</p>
+
+  <h2>Data</h2>
+  <p>TIMSS Grade 4 math for 2011, 2015, 2019 and 2023, covering about 90,000 students per wave in the countries we studied (90,861 in 2019 and 90,212 in 2023). The factor model uses 311,597 observations. For the dynamic part we used the TIMSS 2023 longitudinal sample, which follows students from Grade 4 to Grade 5 in Sweden, Italy, Slovenia, Kosovo, North Macedonia and Montenegro.</p>
+
+  <h2>Doing survey statistics properly with TIMSS</h2>
+  <p>TIMSS is a complex survey. Ignoring its design gives standard errors that are far too small, so every estimate uses:</p>
+  <ul class="list">
+    <li><b>Jackknife replication</b> (JK2) with 75 sampling zones and 150 replicate weights.</li>
+    <li><b>Five plausible values</b> per student, combined with Rubin's rules.</li>
+    <li><b>A common outcome scale:</b> each student's percentile rank in math across Europe, which makes countries comparable.</li>
+    <li><b>A latent measure of parental investment:</b> a confirmatory factor model on the ordered home-activity items, estimated with WLSMV.</li>
+  </ul>
+  <p>To check the parental-education measure, I compared its country averages with World Bank data on tertiary attainment. The work is in R (<code>survey</code>, <code>fixest</code>), with the IEA IDB Analyzer for descriptives, two-way fixed effects on the longitudinal panel, and QGIS for the maps.</p>
+
+  <h2>Results: unpublished</h2>
+  <p>The findings belong to an internal World Bank policy paper and are not public. This page covers the question, data and methods only.</p>
+
+  <h2>Team and deliverable</h2>
+  <p>I worked with Róisín Downes, Taneesha Shekhawat and Unyime-Young Mfon, under CEU faculty supervision, from September 2025 to March 2026. The output was an internal policy paper for the World Bank, plus a poster. The analysis code is on GitHub: <a href="https://github.com/Daniel-Navarro-M/World_Bank_CEU" rel="noopener" target="_blank">World Bank CEU TIMSS analysis</a>.</p>
+
+  <nav class="next" aria-label="More work">
+    <a href="/#work">← Back to all work</a>
+    <a href="/work/dominican-migration-nlp/">Next: How Dominicans talk about Haitian migration (NLP) →</a>
+  </nav>
+</div></main>
+<footer><div class="wrap"><span>© <span data-year>2026</span> Daniel Navarro · Geneva</span><span><a href="/">Home</a> · <a href="/cv/">CV</a></span></div></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
